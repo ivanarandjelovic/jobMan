@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?>
+
+<cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+	<storageModule moduleId="org.eclipse.cdt.core.settings">
+		<cconfiguration id="cdt.managedbuild.config.gnu.exe.debug.1145760379">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.exe.debug.1145760379" moduleId="org.eclipse.cdt.core.settings" name="Debug">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.exe.debug.1145760379" name="Debug" parent="cdt.managedbuild.config.gnu.exe.debug">
+					<folderInfo id="cdt.managedbuild.config.gnu.exe.debug.1145760379." name="/" resourcePath="">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.exe.debug.45338036" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.exe.debug">
+							<targetPlatform id="cdt.managedbuild.target.gnu.platform.exe.debug.1892228025" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.exe.debug"/>
+							<builder buildPath="${workspace_loc:/mm1/Debug}" id="cdt.managedbuild.target.gnu.builder.exe.debug.791395477" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="cdt.managedbuild.target.gnu.builder.exe.debug"/>
+							<tool id="cdt.managedbuild.tool.gnu.archiver.base.1106222105" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1601660407" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug">
+								<option id="gnu.cpp.compiler.exe.debug.option.optimization.level.1589960954" name="Optimization Level" superClass="gnu.cpp.compiler.exe.debug.option.optimization.level" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.exe.debug.option.debugging.level.1289820054" name="Debug Level" superClass="gnu.cpp.compiler.exe.debug.option.debugging.level" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.include.paths.1552190326" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="/usr/include/glib-2.0"/>
+									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/glib-2.0/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/dbus-1.0"/>
+									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/dbus-1.0/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/gconfmm-2.6"/>
+									<listOptionValue builtIn="false" value="/usr/lib/gconfmm-2.6/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/glibmm-2.4"/>
+									<listOptionValue builtIn="false" value="/usr/lib/glibmm-2.4/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/gconf/2"/>
+									<listOptionValue builtIn="false" value="/usr/include/sigc++-2.0"/>
+									<listOptionValue builtIn="false" value="/usr/lib/sigc++-2.0/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/gdk-pixbuf-2.0"/>
+									<listOptionValue builtIn="false" value="/usr/include/atk-1.0"/>
+									<listOptionValue builtIn="false" value="/usr/include/pango-1.0"/>
+									<listOptionValue builtIn="false" value="/usr/include/cairo"/>
+									<listOptionValue builtIn="false" value="/usr/include/pixman-1"/>
+									<listOptionValue builtIn="false" value="/usr/include/freetype2"/>
+									<listOptionValue builtIn="false" value="/usr/include/libpng12"/>
+									<listOptionValue builtIn="false" value="/usr/include/gio-unix-2.0/"/>
+									<listOptionValue builtIn="false" value="/usr/include/gtkmm-3.0"/>
+									<listOptionValue builtIn="false" value="/usr/lib/gtkmm-3.0/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/atkmm-1.6"/>
+									<listOptionValue builtIn="false" value="/usr/include/giomm-2.4"/>
+									<listOptionValue builtIn="false" value="/usr/lib/giomm-2.4/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/pangomm-1.4"/>
+									<listOptionValue builtIn="false" value="/usr/lib/pangomm-1.4/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/gtk-3.0"/>
+									<listOptionValue builtIn="false" value="/usr/include/cairomm-1.0"/>
+									<listOptionValue builtIn="false" value="/usr/lib/cairomm-1.0/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/gtk-3.0/unix-print"/>
+									<listOptionValue builtIn="false" value="/usr/include/gdkmm-3.0"/>
+									<listOptionValue builtIn="false" value="/usr/lib/gdkmm-3.0/include"/>
+								</option>
+								<option id="gnu.cpp.compiler.option.other.other.1979994604" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="-c -fmessage-length=0 -pthread -DGSEAL_ENABLE" valueType="string"/>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1969882448" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.261193852" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.debug">
+								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.exe.debug.option.optimization.level.152054715" name="Optimization Level" superClass="gnu.c.compiler.exe.debug.option.optimization.level" valueType="enumerated"/>
+								<option id="gnu.c.compiler.exe.debug.option.debugging.level.1360564080" name="Debug Level" superClass="gnu.c.compiler.exe.debug.option.debugging.level" value="gnu.c.debugging.level.max" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.include.paths.1413605738" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="/usr/include/glib-2.0"/>
+									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/glib-2.0/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/dbus-1.0"/>
+									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/dbus-1.0/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/gconfmm-2.6"/>
+									<listOptionValue builtIn="false" value="/usr/lib/gconfmm-2.6/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/glibmm-2.4"/>
+									<listOptionValue builtIn="false" value="/usr/lib/glibmm-2.4/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/gconf/2"/>
+									<listOptionValue builtIn="false" value="/usr/include/sigc++-2.0"/>
+									<listOptionValue builtIn="false" value="/usr/lib/sigc++-2.0/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/gdk-pixbuf-2.0"/>
+									<listOptionValue builtIn="false" value="/usr/include/atk-1.0"/>
+									<listOptionValue builtIn="false" value="/usr/include/pango-1.0"/>
+									<listOptionValue builtIn="false" value="/usr/include/cairo"/>
+									<listOptionValue builtIn="false" value="/usr/include/pixman-1"/>
+									<listOptionValue builtIn="false" value="/usr/include/freetype2"/>
+									<listOptionValue builtIn="false" value="/usr/include/libpng12"/>
+									<listOptionValue builtIn="false" value="/usr/include/gio-unix-2.0/"/>
+									<listOptionValue builtIn="false" value="/usr/include/gtkmm-3.0"/>
+									<listOptionValue builtIn="false" value="/usr/lib/gtkmm-3.0/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/atkmm-1.6"/>
+									<listOptionValue builtIn="false" value="/usr/include/giomm-2.4"/>
+									<listOptionValue builtIn="false" value="/usr/lib/giomm-2.4/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/pangomm-1.4"/>
+									<listOptionValue builtIn="false" value="/usr/lib/pangomm-1.4/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/gtk-3.0"/>
+									<listOptionValue builtIn="false" value="/usr/include/cairomm-1.0"/>
+									<listOptionValue builtIn="false" value="/usr/lib/cairomm-1.0/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/gtk-3.0/unix-print"/>
+									<listOptionValue builtIn="false" value="/usr/include/gdkmm-3.0"/>
+									<listOptionValue builtIn="false" value="/usr/lib/gdkmm-3.0/include"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1965991127" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.linker.exe.debug.1944282964" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.exe.debug"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug.1909367487" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug">
+								<option id="gnu.cpp.link.option.libs.1894399023" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
+									<listOptionValue builtIn="false" value="gconfmm-2.6"/>
+									<listOptionValue builtIn="false" value="glibmm-2.4"/>
+									<listOptionValue builtIn="false" value="gconf-2"/>
+									<listOptionValue builtIn="false" value="gobject-2.0"/>
+									<listOptionValue builtIn="false" value="sigc-2.0"/>
+									<listOptionValue builtIn="false" value="gthread-2.0"/>
+									<listOptionValue builtIn="false" value="rt"/>
+									<listOptionValue builtIn="false" value="glib-2.0"/>
+									<listOptionValue builtIn="false" value="gtkmm-3.0"/>
+									<listOptionValue builtIn="false" value="atkmm-1.6"/>
+									<listOptionValue builtIn="false" value="gdkmm-3.0"/>
+									<listOptionValue builtIn="false" value="giomm-2.4"/>
+									<listOptionValue builtIn="false" value="pangomm-1.4"/>
+									<listOptionValue builtIn="false" value="gtk-3"/>
+									<listOptionValue builtIn="false" value="cairomm-1.0"/>
+									<listOptionValue builtIn="false" value="gdk-3"/>
+									<listOptionValue builtIn="false" value="atk-1.0"/>
+									<listOptionValue builtIn="false" value="cairo-gobject"/>
+									<listOptionValue builtIn="false" value="gio-2.0"/>
+									<listOptionValue builtIn="false" value="pangoft2-1.0"/>
+									<listOptionValue builtIn="false" value="pangocairo-1.0"/>
+									<listOptionValue builtIn="false" value="gdk_pixbuf-2.0"/>
+									<listOptionValue builtIn="false" value="pango-1.0"/>
+									<listOptionValue builtIn="false" value="freetype"/>
+									<listOptionValue builtIn="false" value="fontconfig"/>
+									<listOptionValue builtIn="false" value="gmodule-2.0"/>
+									<listOptionValue builtIn="false" value="cairo"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.2063445900" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.assembler.exe.debug.1865114927" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.exe.debug">
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.298233896" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+							</tool>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings">
+				<externalSettings containerId="org.eclipse.cdt.managedbuilder.pkgconfig.extSettings" factoryId="org.eclipse.cdt.core.extension.container.factory">
+					<externalSetting contentTypes="org.eclipse.cdt.managedbuilder.core.compiledObjectFile">
+						<entry flags="" kind="libraryFile" name="gconfmm-2.6"/>
+						<entry flags="" kind="libraryFile" name="glibmm-2.4"/>
+						<entry flags="" kind="libraryFile" name="gconf-2"/>
+						<entry flags="" kind="libraryFile" name="gobject-2.0"/>
+						<entry flags="" kind="libraryFile" name="sigc-2.0"/>
+						<entry flags="" kind="libraryFile" name="gthread-2.0"/>
+						<entry flags="" kind="libraryFile" name="rt"/>
+						<entry flags="" kind="libraryFile" name="glib-2.0"/>
+						<entry flags="" kind="libraryFile" name="gtkmm-3.0"/>
+						<entry flags="" kind="libraryFile" name="atkmm-1.6"/>
+						<entry flags="" kind="libraryFile" name="gdkmm-3.0"/>
+						<entry flags="" kind="libraryFile" name="giomm-2.4"/>
+						<entry flags="" kind="libraryFile" name="pangomm-1.4"/>
+						<entry flags="" kind="libraryFile" name="gtk-3"/>
+						<entry flags="" kind="libraryFile" name="cairomm-1.0"/>
+						<entry flags="" kind="libraryFile" name="gdk-3"/>
+						<entry flags="" kind="libraryFile" name="atk-1.0"/>
+						<entry flags="" kind="libraryFile" name="cairo-gobject"/>
+						<entry flags="" kind="libraryFile" name="gio-2.0"/>
+						<entry flags="" kind="libraryFile" name="pangoft2-1.0"/>
+						<entry flags="" kind="libraryFile" name="pangocairo-1.0"/>
+						<entry flags="" kind="libraryFile" name="gdk_pixbuf-2.0"/>
+						<entry flags="" kind="libraryFile" name="pango-1.0"/>
+						<entry flags="" kind="libraryFile" name="freetype"/>
+						<entry flags="" kind="libraryFile" name="fontconfig"/>
+						<entry flags="" kind="libraryFile" name="gmodule-2.0"/>
+						<entry flags="" kind="libraryFile" name="cairo"/>
+					</externalSetting>
+					<externalSetting contentTypes="org.eclipse.cdt.core.cxxSource">
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/glib-2.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/glib-2.0/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/dbus-1.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/dbus-1.0/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gconfmm-2.6"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/gconfmm-2.6/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/glibmm-2.4"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/glibmm-2.4/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gconf/2"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/sigc++-2.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/sigc++-2.0/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gdk-pixbuf-2.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/atk-1.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/pango-1.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/cairo"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/pixman-1"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/freetype2"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/libpng12"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gio-unix-2.0/"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gtkmm-3.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/gtkmm-3.0/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/atkmm-1.6"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/giomm-2.4"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/giomm-2.4/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/pangomm-1.4"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/pangomm-1.4/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gtk-3.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/cairomm-1.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/cairomm-1.0/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gtk-3.0/unix-print"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gdkmm-3.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/gdkmm-3.0/include"/>
+					</externalSetting>
+					<externalSetting contentTypes="org.eclipse.cdt.core.cSource">
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/glib-2.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/glib-2.0/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/dbus-1.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/dbus-1.0/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gconfmm-2.6"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/gconfmm-2.6/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/glibmm-2.4"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/glibmm-2.4/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gconf/2"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/sigc++-2.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/sigc++-2.0/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gdk-pixbuf-2.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/atk-1.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/pango-1.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/cairo"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/pixman-1"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/freetype2"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/libpng12"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gio-unix-2.0/"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gtkmm-3.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/gtkmm-3.0/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/atkmm-1.6"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/giomm-2.4"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/giomm-2.4/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/pangomm-1.4"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/pangomm-1.4/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gtk-3.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/cairomm-1.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/cairomm-1.0/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gtk-3.0/unix-print"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gdkmm-3.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/gdkmm-3.0/include"/>
+					</externalSetting>
+				</externalSettings>
+			</storageModule>
+			<storageModule ORBit-2.0="false" ORBit-CosNaming-2.0="false" ORBit-idl-2.0="false" ORBit-imodule-2.0="false" Qt3Support="false" QtCLucene="false" QtCore="false" QtDBus="false" QtDeclarative="false" QtDesigner="false" QtDesignerComponents="false" QtGui="false" QtHelp="false" QtNetwork="false" QtOpenGL="false" QtScript="false" QtScriptTools="false" QtSql="false" QtSvg="false" QtTest="false" QtUiTools="false" QtWebKit="false" QtXml="false" QtXmlPatterns="false" appindicator-0.1="false" appindicator3-0.1="false" atk="false" atkmm-1.6="false" avahi-client="false" avahi-glib="false" banshee-collection-indexer="false" banshee-core="false" banshee-hyena="false" banshee-hyena-data-sqlite="false" banshee-hyena-gui="false" banshee-lastfm="false" banshee-lastfm-gui="false" banshee-mono-media="false" banshee-musicbrainz="false" banshee-nowplaying="false" banshee-services="false" banshee-thickclient="false" banshee-webbrowser="false" bonobo-activation-2.0="false" cairo="false" cairo-fc="false" cairo-ft="false" cairo-gobject="false" cairo-pdf="false" cairo-png="false" cairo-ps="false" cairo-svg="false" cairo-xcb="false" cairo-xcb-shm="false" cairo-xlib="false" cairo-xlib-xrender="false" cairomm-1.0="false" cairomm-ft-1.0="false" cairomm-pdf-1.0="false" cairomm-png-1.0="false" cairomm-ps-1.0="false" cairomm-svg-1.0="false" cairomm-xlib-1.0="false" cairomm-xlib-xrender-1.0="false" compositeproto="false" damageproto="false" dbus-1="false" dbus-glib-1="false" dbus-python="false" dbusmenu-glib-0.4="false" dri="false" fixesproto="false" fontconfig="false" fontutil="false" freetype2="false" gconf-2.0="false" gconfmm-2.6="true" gdk-2.0="false" gdk-3.0="false" gdk-pixbuf-2.0="false" gdk-pixbuf-xlib-2.0="false" gdk-x11-2.0="false" gdk-x11-3.0="false" gdkmm-2.4="false" gdkmm-3.0="false" ginn="false" gio-2.0="false" gio-unix-2.0="false" giomm-2.4="false" gl="false" glib-2.0="false" glibmm-2.4="false" glu="false" gmodule-2.0="false" gmodule-export-2.0="false" gmodule-no-export-2.0="false" gnome-icon-theme="false" gnome-vfs-2.0="false" gnome-vfs-module-2.0="false" gnutls="false" gnutls-extra="false" gobject-2.0="false" gthread-2.0="false" gtkmm-2.4="false" gtkmm-3.0="true" gtkplus-2.0="false" gtkplus-3.0="false" gtkplus-unix-print-2.0="false" gtkplus-unix-print-3.0="false" gtkplus-x11-2.0="false" gtkplus-x11-3.0="false" ibus-table="false" ice="false" inputproto="false" iso-codes="false" kbproto="false" libIDL-2.0="false" libbonobo-2.0="false" libcanberra="false" libdrm="false" libdrm_intel="false" libdrm_nouveau="false" libdrm_radeon="false" libgdiplus="false" libgnome-2.0="false" libkms="false" libpng="false" libpng12="false" libselinux="false" libsepol="false" libtasn1="false" libxml-2.0="false" mobile-broadband-provider-info="false" moduleId="packages" nautilus-sendto="false" notify-python="false" pango="false" pangocairo="false" pangoft2="false" pangomm-1.4="false" pangox="false" pangoxft="false" pixman-1="false" pm-utils="false" pthread-stubs="false" randrproto="false" renderproto="false" shared-mime-info="false" sigcplusplus-2.0="false" sm="false" tomboy-addins="false" udev="false" udisks="false" usbutils="false" x11="false" xau="false" xbitmaps="false" xcb="false" xcb-render="false" xcb-shm="false" xcomposite="false" xcursor="false" xdamage="false" xdmcp="false" xext="false" xextproto="false" xfixes="false" xft="false" xi="false" xinerama="false" xineramaproto="false" xorg-sgml-doctools="false" xorg-wacom="false" xproto="false" xrandr="false" xrender="false" xtrans="false" yelp-xsl="false" zeitgeist-daemon="false" zlib="false"/>
+		</cconfiguration>
+		<cconfiguration id="cdt.managedbuild.config.gnu.exe.release.1340148797">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.exe.release.1340148797" moduleId="org.eclipse.cdt.core.settings" name="Release">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.exe.release.1340148797" name="Release" parent="cdt.managedbuild.config.gnu.exe.release">
+					<folderInfo id="cdt.managedbuild.config.gnu.exe.release.1340148797." name="/" resourcePath="">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.exe.release.913905297" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.exe.release">
+							<targetPlatform id="cdt.managedbuild.target.gnu.platform.exe.release.39887178" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.exe.release"/>
+							<builder buildPath="${workspace_loc:/mm1/Release}" id="cdt.managedbuild.target.gnu.builder.exe.release.735049575" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="cdt.managedbuild.target.gnu.builder.exe.release"/>
+							<tool id="cdt.managedbuild.tool.gnu.archiver.base.188329527" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base"/>
+							<tool command="g++" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.1185988896" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release">
+								<option id="gnu.cpp.compiler.exe.release.option.optimization.level.388484714" name="Optimization Level" superClass="gnu.cpp.compiler.exe.release.option.optimization.level" value="gnu.cpp.compiler.optimization.level.most" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.exe.release.option.debugging.level.851362817" name="Debug Level" superClass="gnu.cpp.compiler.exe.release.option.debugging.level" value="gnu.cpp.compiler.debugging.level.none" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.include.paths.959542012" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="/usr/include/glib-2.0"/>
+									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/glib-2.0/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/dbus-1.0"/>
+									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/dbus-1.0/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/gconfmm-2.6"/>
+									<listOptionValue builtIn="false" value="/usr/lib/gconfmm-2.6/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/glibmm-2.4"/>
+									<listOptionValue builtIn="false" value="/usr/lib/glibmm-2.4/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/gconf/2"/>
+									<listOptionValue builtIn="false" value="/usr/include/sigc++-2.0"/>
+									<listOptionValue builtIn="false" value="/usr/lib/sigc++-2.0/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/gdk-pixbuf-2.0"/>
+									<listOptionValue builtIn="false" value="/usr/include/atk-1.0"/>
+									<listOptionValue builtIn="false" value="/usr/include/pango-1.0"/>
+									<listOptionValue builtIn="false" value="/usr/include/cairo"/>
+									<listOptionValue builtIn="false" value="/usr/include/pixman-1"/>
+									<listOptionValue builtIn="false" value="/usr/include/freetype2"/>
+									<listOptionValue builtIn="false" value="/usr/include/libpng12"/>
+									<listOptionValue builtIn="false" value="/usr/include/gio-unix-2.0/"/>
+									<listOptionValue builtIn="false" value="/usr/include/gtkmm-3.0"/>
+									<listOptionValue builtIn="false" value="/usr/lib/gtkmm-3.0/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/atkmm-1.6"/>
+									<listOptionValue builtIn="false" value="/usr/include/giomm-2.4"/>
+									<listOptionValue builtIn="false" value="/usr/lib/giomm-2.4/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/pangomm-1.4"/>
+									<listOptionValue builtIn="false" value="/usr/lib/pangomm-1.4/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/gtk-3.0"/>
+									<listOptionValue builtIn="false" value="/usr/include/cairomm-1.0"/>
+									<listOptionValue builtIn="false" value="/usr/lib/cairomm-1.0/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/gtk-3.0/unix-print"/>
+									<listOptionValue builtIn="false" value="/usr/include/gdkmm-3.0"/>
+									<listOptionValue builtIn="false" value="/usr/lib/gdkmm-3.0/include"/>
+								</option>
+								<option id="gnu.cpp.compiler.option.other.other.938167362" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="-c -fmessage-length=0 -pthread -DGSEAL_ENABLE" valueType="string"/>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1530081522" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.release.770043776" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.release">
+								<option defaultValue="gnu.c.optimization.level.most" id="gnu.c.compiler.exe.release.option.optimization.level.1454619866" name="Optimization Level" superClass="gnu.c.compiler.exe.release.option.optimization.level" valueType="enumerated"/>
+								<option id="gnu.c.compiler.exe.release.option.debugging.level.2053678541" name="Debug Level" superClass="gnu.c.compiler.exe.release.option.debugging.level" value="gnu.c.debugging.level.none" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.include.paths.1545684163" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="/usr/include/glib-2.0"/>
+									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/glib-2.0/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/dbus-1.0"/>
+									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/dbus-1.0/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/gconfmm-2.6"/>
+									<listOptionValue builtIn="false" value="/usr/lib/gconfmm-2.6/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/glibmm-2.4"/>
+									<listOptionValue builtIn="false" value="/usr/lib/glibmm-2.4/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/gconf/2"/>
+									<listOptionValue builtIn="false" value="/usr/include/sigc++-2.0"/>
+									<listOptionValue builtIn="false" value="/usr/lib/sigc++-2.0/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/gdk-pixbuf-2.0"/>
+									<listOptionValue builtIn="false" value="/usr/include/atk-1.0"/>
+									<listOptionValue builtIn="false" value="/usr/include/pango-1.0"/>
+									<listOptionValue builtIn="false" value="/usr/include/cairo"/>
+									<listOptionValue builtIn="false" value="/usr/include/pixman-1"/>
+									<listOptionValue builtIn="false" value="/usr/include/freetype2"/>
+									<listOptionValue builtIn="false" value="/usr/include/libpng12"/>
+									<listOptionValue builtIn="false" value="/usr/include/gio-unix-2.0/"/>
+									<listOptionValue builtIn="false" value="/usr/include/gtkmm-3.0"/>
+									<listOptionValue builtIn="false" value="/usr/lib/gtkmm-3.0/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/atkmm-1.6"/>
+									<listOptionValue builtIn="false" value="/usr/include/giomm-2.4"/>
+									<listOptionValue builtIn="false" value="/usr/lib/giomm-2.4/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/pangomm-1.4"/>
+									<listOptionValue builtIn="false" value="/usr/lib/pangomm-1.4/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/gtk-3.0"/>
+									<listOptionValue builtIn="false" value="/usr/include/cairomm-1.0"/>
+									<listOptionValue builtIn="false" value="/usr/lib/cairomm-1.0/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/gtk-3.0/unix-print"/>
+									<listOptionValue builtIn="false" value="/usr/include/gdkmm-3.0"/>
+									<listOptionValue builtIn="false" value="/usr/lib/gdkmm-3.0/include"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1082390283" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.linker.exe.release.1370384032" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.exe.release"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.exe.release.1961353711" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.exe.release">
+								<option id="gnu.cpp.link.option.libs.1887322881" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
+									<listOptionValue builtIn="false" value="gconfmm-2.6"/>
+									<listOptionValue builtIn="false" value="glibmm-2.4"/>
+									<listOptionValue builtIn="false" value="gconf-2"/>
+									<listOptionValue builtIn="false" value="gobject-2.0"/>
+									<listOptionValue builtIn="false" value="sigc-2.0"/>
+									<listOptionValue builtIn="false" value="gthread-2.0"/>
+									<listOptionValue builtIn="false" value="rt"/>
+									<listOptionValue builtIn="false" value="glib-2.0"/>
+									<listOptionValue builtIn="false" value="gtkmm-3.0"/>
+									<listOptionValue builtIn="false" value="atkmm-1.6"/>
+									<listOptionValue builtIn="false" value="gdkmm-3.0"/>
+									<listOptionValue builtIn="false" value="giomm-2.4"/>
+									<listOptionValue builtIn="false" value="pangomm-1.4"/>
+									<listOptionValue builtIn="false" value="gtk-3"/>
+									<listOptionValue builtIn="false" value="cairomm-1.0"/>
+									<listOptionValue builtIn="false" value="gdk-3"/>
+									<listOptionValue builtIn="false" value="atk-1.0"/>
+									<listOptionValue builtIn="false" value="cairo-gobject"/>
+									<listOptionValue builtIn="false" value="gio-2.0"/>
+									<listOptionValue builtIn="false" value="pangoft2-1.0"/>
+									<listOptionValue builtIn="false" value="pangocairo-1.0"/>
+									<listOptionValue builtIn="false" value="gdk_pixbuf-2.0"/>
+									<listOptionValue builtIn="false" value="pango-1.0"/>
+									<listOptionValue builtIn="false" value="freetype"/>
+									<listOptionValue builtIn="false" value="fontconfig"/>
+									<listOptionValue builtIn="false" value="gmodule-2.0"/>
+									<listOptionValue builtIn="false" value="cairo"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1692970012" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.assembler.exe.release.1551463594" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.exe.release">
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.118785384" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+							</tool>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings">
+				<externalSettings containerId="org.eclipse.cdt.managedbuilder.pkgconfig.extSettings" factoryId="org.eclipse.cdt.core.extension.container.factory">
+					<externalSetting contentTypes="org.eclipse.cdt.managedbuilder.core.compiledObjectFile">
+						<entry flags="" kind="libraryFile" name="gconfmm-2.6"/>
+						<entry flags="" kind="libraryFile" name="glibmm-2.4"/>
+						<entry flags="" kind="libraryFile" name="gconf-2"/>
+						<entry flags="" kind="libraryFile" name="gobject-2.0"/>
+						<entry flags="" kind="libraryFile" name="sigc-2.0"/>
+						<entry flags="" kind="libraryFile" name="gthread-2.0"/>
+						<entry flags="" kind="libraryFile" name="rt"/>
+						<entry flags="" kind="libraryFile" name="glib-2.0"/>
+						<entry flags="" kind="libraryFile" name="gtkmm-3.0"/>
+						<entry flags="" kind="libraryFile" name="atkmm-1.6"/>
+						<entry flags="" kind="libraryFile" name="gdkmm-3.0"/>
+						<entry flags="" kind="libraryFile" name="giomm-2.4"/>
+						<entry flags="" kind="libraryFile" name="pangomm-1.4"/>
+						<entry flags="" kind="libraryFile" name="gtk-3"/>
+						<entry flags="" kind="libraryFile" name="cairomm-1.0"/>
+						<entry flags="" kind="libraryFile" name="gdk-3"/>
+						<entry flags="" kind="libraryFile" name="atk-1.0"/>
+						<entry flags="" kind="libraryFile" name="cairo-gobject"/>
+						<entry flags="" kind="libraryFile" name="gio-2.0"/>
+						<entry flags="" kind="libraryFile" name="pangoft2-1.0"/>
+						<entry flags="" kind="libraryFile" name="pangocairo-1.0"/>
+						<entry flags="" kind="libraryFile" name="gdk_pixbuf-2.0"/>
+						<entry flags="" kind="libraryFile" name="pango-1.0"/>
+						<entry flags="" kind="libraryFile" name="freetype"/>
+						<entry flags="" kind="libraryFile" name="fontconfig"/>
+						<entry flags="" kind="libraryFile" name="gmodule-2.0"/>
+						<entry flags="" kind="libraryFile" name="cairo"/>
+					</externalSetting>
+					<externalSetting contentTypes="org.eclipse.cdt.core.cxxSource">
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/glib-2.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/glib-2.0/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/dbus-1.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/dbus-1.0/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gconfmm-2.6"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/gconfmm-2.6/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/glibmm-2.4"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/glibmm-2.4/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gconf/2"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/sigc++-2.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/sigc++-2.0/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gdk-pixbuf-2.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/atk-1.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/pango-1.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/cairo"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/pixman-1"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/freetype2"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/libpng12"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gio-unix-2.0/"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gtkmm-3.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/gtkmm-3.0/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/atkmm-1.6"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/giomm-2.4"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/giomm-2.4/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/pangomm-1.4"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/pangomm-1.4/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gtk-3.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/cairomm-1.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/cairomm-1.0/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gtk-3.0/unix-print"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gdkmm-3.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/gdkmm-3.0/include"/>
+					</externalSetting>
+					<externalSetting contentTypes="org.eclipse.cdt.core.cSource">
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/glib-2.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/glib-2.0/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/dbus-1.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/dbus-1.0/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gconfmm-2.6"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/gconfmm-2.6/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/glibmm-2.4"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/glibmm-2.4/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gconf/2"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/sigc++-2.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/sigc++-2.0/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gdk-pixbuf-2.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/atk-1.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/pango-1.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/cairo"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/pixman-1"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/freetype2"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/libpng12"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gio-unix-2.0/"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gtkmm-3.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/gtkmm-3.0/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/atkmm-1.6"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/giomm-2.4"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/giomm-2.4/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/pangomm-1.4"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/pangomm-1.4/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gtk-3.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/cairomm-1.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/cairomm-1.0/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gtk-3.0/unix-print"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gdkmm-3.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/gdkmm-3.0/include"/>
+					</externalSetting>
+				</externalSettings>
+			</storageModule>
+			<storageModule ORBit-2.0="false" ORBit-CosNaming-2.0="false" ORBit-idl-2.0="false" ORBit-imodule-2.0="false" Qt3Support="false" QtCLucene="false" QtCore="false" QtDBus="false" QtDeclarative="false" QtDesigner="false" QtDesignerComponents="false" QtGui="false" QtHelp="false" QtNetwork="false" QtOpenGL="false" QtScript="false" QtScriptTools="false" QtSql="false" QtSvg="false" QtTest="false" QtUiTools="false" QtWebKit="false" QtXml="false" QtXmlPatterns="false" appindicator-0.1="false" appindicator3-0.1="false" atk="false" atkmm-1.6="false" avahi-client="false" avahi-glib="false" banshee-collection-indexer="false" banshee-core="false" banshee-hyena="false" banshee-hyena-data-sqlite="false" banshee-hyena-gui="false" banshee-lastfm="false" banshee-lastfm-gui="false" banshee-mono-media="false" banshee-musicbrainz="false" banshee-nowplaying="false" banshee-services="false" banshee-thickclient="false" banshee-webbrowser="false" bonobo-activation-2.0="false" cairo="false" cairo-fc="false" cairo-ft="false" cairo-gobject="false" cairo-pdf="false" cairo-png="false" cairo-ps="false" cairo-svg="false" cairo-xcb="false" cairo-xcb-shm="false" cairo-xlib="false" cairo-xlib-xrender="false" cairomm-1.0="false" cairomm-ft-1.0="false" cairomm-pdf-1.0="false" cairomm-png-1.0="false" cairomm-ps-1.0="false" cairomm-svg-1.0="false" cairomm-xlib-1.0="false" cairomm-xlib-xrender-1.0="false" compositeproto="false" damageproto="false" dbus-1="false" dbus-glib-1="false" dbus-python="false" dbusmenu-glib-0.4="false" dri="false" fixesproto="false" fontconfig="false" fontutil="false" freetype2="false" gconf-2.0="false" gconfmm-2.6="true" gdk-2.0="false" gdk-3.0="false" gdk-pixbuf-2.0="false" gdk-pixbuf-xlib-2.0="false" gdk-x11-2.0="false" gdk-x11-3.0="false" gdkmm-2.4="false" gdkmm-3.0="false" ginn="false" gio-2.0="false" gio-unix-2.0="false" giomm-2.4="false" gl="false" glib-2.0="false" glibmm-2.4="false" glu="false" gmodule-2.0="false" gmodule-export-2.0="false" gmodule-no-export-2.0="false" gnome-icon-theme="false" gnome-vfs-2.0="false" gnome-vfs-module-2.0="false" gnutls="false" gnutls-extra="false" gobject-2.0="false" gthread-2.0="false" gtkmm-2.4="false" gtkmm-3.0="true" gtkplus-2.0="false" gtkplus-3.0="false" gtkplus-unix-print-2.0="false" gtkplus-unix-print-3.0="false" gtkplus-x11-2.0="false" gtkplus-x11-3.0="false" ibus-table="false" ice="false" inputproto="false" iso-codes="false" kbproto="false" libIDL-2.0="false" libbonobo-2.0="false" libcanberra="false" libdrm="false" libdrm_intel="false" libdrm_nouveau="false" libdrm_radeon="false" libgdiplus="false" libgnome-2.0="false" libkms="false" libpng="false" libpng12="false" libselinux="false" libsepol="false" libtasn1="false" libxml-2.0="false" mobile-broadband-provider-info="false" moduleId="packages" nautilus-sendto="false" notify-python="false" pango="false" pangocairo="false" pangoft2="false" pangomm-1.4="false" pangox="false" pangoxft="false" pixman-1="false" pm-utils="false" pthread-stubs="false" randrproto="false" renderproto="false" shared-mime-info="false" sigcplusplus-2.0="false" sm="false" tomboy-addins="false" udev="false" udisks="false" usbutils="false" x11="false" xau="false" xbitmaps="false" xcb="false" xcb-render="false" xcb-shm="false" xcomposite="false" xcursor="false" xdamage="false" xdmcp="false" xext="false" xextproto="false" xfixes="false" xft="false" xi="false" xinerama="false" xineramaproto="false" xorg-sgml-doctools="false" xorg-wacom="false" xproto="false" xrandr="false" xrender="false" xtrans="false" yelp-xsl="false" zeitgeist-daemon="false" zlib="false"/>
+		</cconfiguration>
+	</storageModule>
+	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+		<project id="mm1.cdt.managedbuild.target.gnu.exe.2020008277" name="Executable" projectType="cdt.managedbuild.target.gnu.exe"/>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.release.1340148797;cdt.managedbuild.config.gnu.exe.release.1340148797.;cdt.managedbuild.tool.gnu.c.compiler.exe.release.770043776;cdt.managedbuild.tool.gnu.c.compiler.input.1082390283">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.release.1340148797;cdt.managedbuild.config.gnu.exe.release.1340148797.;cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.1185988896;cdt.managedbuild.tool.gnu.cpp.compiler.input.1530081522">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileCPP"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.debug.1145760379;cdt.managedbuild.config.gnu.exe.debug.1145760379.;cdt.managedbuild.tool.gnu.c.compiler.exe.debug.261193852;cdt.managedbuild.tool.gnu.c.compiler.input.1965991127">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.debug.1145760379;cdt.managedbuild.config.gnu.exe.debug.1145760379.;cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1601660407;cdt.managedbuild.tool.gnu.cpp.compiler.input.1969882448">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileCPP"/>
+		</scannerConfigBuildInfo>
+	</storageModule>
+	<storageModule moduleId="refreshScope"/>
+	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
+	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
+</cproject>
