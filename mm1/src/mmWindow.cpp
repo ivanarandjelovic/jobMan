@@ -137,3 +137,4 @@ bool mmWindow::on_window_state_event(GdkEventWindowState* event) {
 	}
 	return false;
 }
+

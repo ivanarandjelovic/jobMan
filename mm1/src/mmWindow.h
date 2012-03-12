@@ -21,6 +21,7 @@ public:
 
 	void savePosition(const Glib::ustring &windowConfPath);
 	void loadPosition(const Glib::ustring &windowConfPath);
+
 private:
 	bool isMaximized;
 	int size_width, size_height, pos_x, pos_y;
