@@ -21,10 +21,10 @@ int main(int argc, char *argv[]) {
 
 	/* Set the GMemVTable to the default table. This needs to be called before
 	* any other call to a GLib function. */
-	g_mem_set_vtable (glib_mem_profiler_table);
+	//g_mem_set_vtable (glib_mem_profiler_table);
 
 	/* Call g_mem_profile() when the application exits. */
-	g_atexit (g_mem_profile);
+	//g_atexit (g_mem_profile);
 
 	// END: Setting up memory profiling
 

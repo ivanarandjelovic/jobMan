@@ -9,6 +9,25 @@
 #define SERVICES_H_
 
 #include <giomm.h>
+#include <iostream>
+#include <sstream>
+
+using namespace Glib;
+using namespace Gio;
+
+class Job {
+public:
+	Glib::ustring dbusObjectPath;
+	Glib::ustring startOn;
+	Glib::ustring stopOn;
+	Glib::ustring emits;
+	Glib::ustring author;
+	Glib::ustring description;
+	Glib::ustring version;
+	Glib::ustring name;
+
+	void toOutput();
+};
 
 class Services {
 
@@ -17,8 +36,11 @@ public:
 	void loadUpstartJobs();
 	void loadSysVJobs();
 private:
-	std::list<Glib::ustring> upstartJobNames;
-	std::list<Glib::ustring> sysVJobNames;
+	std::list<Job> upstartJobs;
+
+	Glib::ustring getStringProperty(RefPtr<DBus::Proxy> &jobProxy, const ustring &propertyName);
+	Glib::ustring getStringArrayProperty(RefPtr<DBus::Proxy> &jobProxy, const ustring &propertyName);
+
 };
 
 #endif /* SERVICES_H_ */
