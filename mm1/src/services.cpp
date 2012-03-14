@@ -7,8 +7,9 @@
 
 #include "services.h"
 
+using namespace std;
+
 void Job::toOutput() {
-	using namespace std;
 	cout << "Job:" << endl;
 	cout << "dbusObjectPath = " << dbusObjectPath << endl;
 	cout << "startOn = " << startOn << endl;
@@ -51,6 +52,32 @@ Glib::ustring Services::getStringArrayProperty(RefPtr<DBus::Proxy> &jobProxy, co
 	return propertyValue;
 }
 
+Glib::ustring Services::getArrayOfStringArraysProperty(RefPtr<DBus::Proxy> &jobProxy, const ustring &propertyName) {
+	Glib::ustring propertyValue;
+
+	VariantContainerBase varianContainer;
+	jobProxy->get_cached_property(varianContainer, propertyName);
+
+	if (varianContainer.get_size() > 0) {
+
+		VariantIter iterator(varianContainer.get_child(0));
+
+		Variant<Glib::ustring> varArray;
+		while (iterator.next_value(varArray)) {
+			cout << varArray.get_type_string() << endl;
+			propertyValue.append(", ").append(varArray.get());
+//		std::vector<Glib::ustring> strVector = varArray.get();
+//		for (uint j = 0; j < strVector.size(); j++) {
+//			if (j > 0) {
+//				propertyValue.append(", ");
+//			}
+//			propertyValue.append(strVector.at(j));
+//		}
+		}
+	}
+	return propertyValue;
+}
+
 void Services::loadUpstartJobs() {
 	Glib::RefPtr<Gio::DBus::Connection> busConnection;
 
@@ -81,6 +108,8 @@ void Services::loadUpstartJobs() {
 		RefPtr<DBus::Proxy> jobProxy = DBus::Proxy::create_sync(busConnection, "com.ubuntu.Upstart", jobObjectPath,
 				"com.ubuntu.Upstart0_6.Job");
 
+		service.startOn = getArrayOfStringArraysProperty(jobProxy, ustring("start_on"));
+		service.stopOn = getArrayOfStringArraysProperty(jobProxy, ustring("stop_on"));
 		service.emits = getStringArrayProperty(jobProxy, ustring("emits"));
 		service.author = getStringProperty(jobProxy, ustring("author"));
 		service.description = getStringProperty(jobProxy, ustring("description"));
