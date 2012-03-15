@@ -28,6 +28,8 @@ int main(int argc, char *argv[]) {
 
 	// END: Setting up memory profiling
 
+	Services services;
+	services.loadUpstartJobs();
 
 	std::string configPath(configBasePath);
 	configPath.append("/").append("MainWindow");
@@ -38,8 +40,7 @@ int main(int argc, char *argv[]) {
 
 	window.loadPosition(configPath);
 
-	Services services;
-	services.loadUpstartJobs();
+	window.loadServices(services);
 
 	Gtk::Main::run(window);
 

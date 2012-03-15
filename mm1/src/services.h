@@ -35,8 +35,10 @@ public:
 	~Services();
 	void loadUpstartJobs();
 	void loadSysVJobs();
-private:
+
 	std::list<Job> upstartJobs;
+private:
+
 
 	Glib::ustring getStringProperty(RefPtr<DBus::Proxy> &jobProxy, const ustring &propertyName);
 	Glib::ustring getStringArrayProperty(RefPtr<DBus::Proxy> &jobProxy, const ustring &propertyName);

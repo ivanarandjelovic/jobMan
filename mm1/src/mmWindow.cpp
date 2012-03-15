@@ -13,10 +13,41 @@ mmWindow::mmWindow() {
 	positionValid = false;
 
 	// We need this to precisely return window to it's previous possition
-	set_gravity(Gdk::GRAVITY_STATIC);
+//	set_gravity(Gdk::GRAVITY_STATIC);
+//
+//	scrolledWindow.set_policy(Gtk::POLICY_AUTOMATIC, Gtk::POLICY_AUTOMATIC);
+//	scrolledWindow.add(treeView);
+//	treeModel = Gtk::ListStore::create(modelColumns);
+//
+//	treeView.set_model(treeModel);
+//	//add(scrolledWindow);
+//
+//	m_VBox.pack_start(scrolledWindow);
+//	m_VBox.pack_start(detailsLabel, Gtk::PACK_SHRINK);
+//	add(m_VBox);
+
+	add(paned);
+	detailsLabel.set_text("<empty>");
+
+	scrolledWindow.set_policy(Gtk::POLICY_AUTOMATIC, Gtk::POLICY_AUTOMATIC);
+	scrolledWindow.add(treeView);
+
+	treeModel = Gtk::ListStore::create(modelColumns);
+
+	treeView.set_model(treeModel);
+	treeView.signal_selection_received().connect(sigc::mem_fun(*this, &mmWindow::on_job_selected));
+
+	paned.pack1(scrolledWindow, true, true);
+	paned.pack2(detailsLabel, true, true);
+
+	show_all_children();
 
 	// This seems to be not needed, I would really like to see some half-decent documentation
 //	this->signal_window_state_event().connect(sigc::mem_fun(*this, &mmWindow::on_window_state_event));
+}
+
+void mmWindow::on_job_selected(const Gtk::SelectionData&, const unsigned int&) {
+	g_message("aha");
 }
 
 /**
@@ -109,7 +140,7 @@ bool mmWindow::loadConfBool(Glib::RefPtr<Gnome::Conf::Client> &gConfClient, cons
 
 void mmWindow::setPosition() {
 	if (positionValid) {
-		set_size_request(size_width, size_height);
+		resize(size_width, size_height);
 		move(pos_x, pos_y);
 		if (isMaximized) {
 			maximize();
@@ -117,6 +148,11 @@ void mmWindow::setPosition() {
 			unmaximize();
 		}
 	}
+
+	// Adjust panel and list:
+//	treeView.set_size_request(size_width * 2 / 3, size_height);
+//	scrolledWindow.set_size_request(size_width * 2 / 3, size_height);
+	paned.set_position(size_width * 2 / 3);
 }
 
 bool mmWindow::on_configure_event(GdkEventConfigure* event) {
@@ -138,3 +174,16 @@ bool mmWindow::on_window_state_event(GdkEventWindowState* event) {
 	return false;
 }
 
+void mmWindow::loadServices(Services &services) {
+
+	// Add data into the model
+	for (std::list<Job>::iterator it = services.upstartJobs.begin(); it != services.upstartJobs.end(); it++) {
+		Gtk::TreeModel::Row row = *(treeModel->append());
+		row[modelColumns.jobName] = it->name;
+		row[modelColumns.description] = it->description;
+	}
+
+	// Show columns in the vew
+	treeView.append_column("Name", modelColumns.jobName);
+	treeView.append_column("Description", modelColumns.description);
+}

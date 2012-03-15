@@ -12,6 +12,21 @@
 #include <gconfmm.h>
 #include <memory>
 
+#include "services.h"
+
+class MyModelColumns: public Gtk::TreeModel::ColumnRecord {
+public:
+	Gtk::TreeModelColumn<Glib::ustring> jobName;
+	Gtk::TreeModelColumn<Glib::ustring> description;
+	//Gtk::TreeModelColumn< Glib::RefPtr<Gdk::Pixbuf> > thumbnail;
+
+	MyModelColumns() {
+		add(jobName);
+		add(description);
+		//add (thumbnail);
+	}
+};
+
 class mmWindow: public Gtk::Window {
 
 public:
@@ -21,6 +36,8 @@ public:
 
 	void savePosition(const Glib::ustring &windowConfPath);
 	void loadPosition(const Glib::ustring &windowConfPath);
+
+	void loadServices(Services &services);
 
 private:
 	bool isMaximized;
@@ -32,6 +49,21 @@ private:
 			const Glib::ustring &keyName);
 	bool loadConfBool(Glib::RefPtr<Gnome::Conf::Client> &gConfClient, const Glib::ustring &windowConfPath,
 			const Glib::ustring &keyName);
+
+	// Widgets
+	Gtk::Paned paned;
+
+	Gtk::ScrolledWindow scrolledWindow;
+	Gtk::TreeView treeView;
+	MyModelColumns modelColumns;
+	Glib::RefPtr<Gtk::ListStore> treeModel;
+
+	Gtk::Label detailsLabel;
+	//Gtk::Box m_VBox;
+
+protected:
+	// events:
+	void on_job_selected(const Gtk::SelectionData&, const unsigned int&);
 };
 
 #endif /* MMWINDOW_H_ */

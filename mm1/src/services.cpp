@@ -56,25 +56,27 @@ Glib::ustring Services::getArrayOfStringArraysProperty(RefPtr<DBus::Proxy> &jobP
 	Glib::ustring propertyValue;
 
 	VariantContainerBase varianContainer;
+
 	jobProxy->get_cached_property(varianContainer, propertyName);
 
-	if (varianContainer.get_size() > 0) {
+	VariantIter iterator(varianContainer);
 
-		VariantIter iterator(varianContainer.get_child(0));
-
-		Variant<Glib::ustring> varArray;
-		while (iterator.next_value(varArray)) {
-			cout << varArray.get_type_string() << endl;
-			propertyValue.append(", ").append(varArray.get());
-//		std::vector<Glib::ustring> strVector = varArray.get();
-//		for (uint j = 0; j < strVector.size(); j++) {
-//			if (j > 0) {
-//				propertyValue.append(", ");
-//			}
-//			propertyValue.append(strVector.at(j));
-//		}
+	Variant<std::vector<Glib::ustring> > innerVectorContainer;
+	int outerLoop = 0;
+	while (iterator.next_value(innerVectorContainer)) {
+		if (outerLoop > 0) {
+			propertyValue.append("\n");
 		}
+		std::vector<Glib::ustring> innerVector = innerVectorContainer.get();
+		for (uint j = 0; j < innerVector.size(); j++) {
+			if (j > 0) {
+				propertyValue.append(", ");
+			}
+			propertyValue.append(innerVector.at(j));
+		}
+		outerLoop++;
 	}
+
 	return propertyValue;
 }
 
