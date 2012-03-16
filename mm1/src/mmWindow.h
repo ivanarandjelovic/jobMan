@@ -33,8 +33,7 @@ class mmWindow: public Gtk::Window {
 
 public:
 	mmWindow();
-	bool on_configure_event(GdkEventConfigure* event);
-	bool on_window_state_event(GdkEventWindowState* event);
+
 
 	void savePosition(const Glib::ustring &windowConfPath);
 	void loadPosition(const Glib::ustring &windowConfPath);
@@ -65,7 +64,10 @@ private:
 
 protected:
 	// events:
-	void on_job_selected();
+	void on_job_selected_handler();
+	bool on_configure_event_handler(GdkEventConfigure* event);
+	bool on_window_state_event_handler(GdkEventWindowState* event);
+
 };
 
 #endif /* MMWINDOW_H_ */

@@ -13,7 +13,10 @@ mmWindow::mmWindow() {
 	positionValid = false;
 
 	// We need this to precisely return window to it's previous possition
-//	set_gravity(Gdk::GRAVITY_STATIC);
+	set_gravity(Gdk::GRAVITY_STATIC);
+
+	signal_configure_event().connect(sigc::mem_fun(*this, &mmWindow::on_configure_event_handler));
+	signal_window_state_event().connect(sigc::mem_fun(*this, &mmWindow::on_window_state_event_handler));
 //
 //	scrolledWindow.set_policy(Gtk::POLICY_AUTOMATIC, Gtk::POLICY_AUTOMATIC);
 //	scrolledWindow.add(treeView);
@@ -26,8 +29,9 @@ mmWindow::mmWindow() {
 //	m_VBox.pack_start(detailsLabel, Gtk::PACK_SHRINK);
 //	add(m_VBox);
 
+	paned.set_hexpand(true);
+	paned.set_vexpand(true);
 	add(paned);
-	detailsLabel.set_text("<empty>");
 
 	scrolledWindow.set_policy(Gtk::POLICY_AUTOMATIC, Gtk::POLICY_AUTOMATIC);
 	scrolledWindow.add(treeView);
@@ -36,10 +40,14 @@ mmWindow::mmWindow() {
 
 	treeView.set_model(treeModel);
 	//treeView.signal_selection_received().connect(sigc::mem_fun(*this, &mmWindow::on_job_selected));
-	treeView.get_selection()->signal_changed().connect(sigc::mem_fun(*this, &mmWindow::on_job_selected));
+	treeView.get_selection()->signal_changed().connect(sigc::mem_fun(*this, &mmWindow::on_job_selected_handler));
 
-	paned.pack1(scrolledWindow, true, true);
-	paned.pack2(detailsLabel, true, true);
+	paned.pack1(scrolledWindow,Gtk::FILL);
+
+	detailsLabel.set_text("<empty>");
+	detailsLabel.set_line_wrap(true);
+
+	paned.pack2(detailsLabel, Gtk::FILL);
 
 	show_all_children();
 
@@ -47,11 +55,13 @@ mmWindow::mmWindow() {
 //	this->signal_window_state_event().connect(sigc::mem_fun(*this, &mmWindow::on_window_state_event));
 }
 
-void mmWindow::on_job_selected() {
+void mmWindow::on_job_selected_handler() {
 	//g_message("aha");
 
 	Gtk::TreeIter iter = treeView.get_selection()->get_selected();
 	if (iter) {
+		//std::cout << iter->get_value(modelColumns.jobName) << std::endl;
+		//std::cout << iter->get_value(modelColumns.completeDescription) << std::endl;
 		detailsLabel.set_text(iter->get_value(modelColumns.completeDescription));
 	}
 }
@@ -161,7 +171,7 @@ void mmWindow::setPosition() {
 	paned.set_position(size_width * 2 / 3);
 }
 
-bool mmWindow::on_configure_event(GdkEventConfigure* event) {
+bool mmWindow::on_configure_event_handler(GdkEventConfigure* event) {
 	if (!isMaximized) {
 		size_width = event->width;
 		size_height = event->height;
@@ -172,7 +182,7 @@ bool mmWindow::on_configure_event(GdkEventConfigure* event) {
 	return false;
 }
 
-bool mmWindow::on_window_state_event(GdkEventWindowState* event) {
+bool mmWindow::on_window_state_event_handler(GdkEventWindowState* event) {
 
 	if (event->changed_mask & GDK_WINDOW_STATE_MAXIMIZED) {
 		isMaximized = event->new_window_state & GDK_WINDOW_STATE_MAXIMIZED;

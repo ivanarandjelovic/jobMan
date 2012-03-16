@@ -20,6 +20,11 @@ Glib::ustring Job::toString() {
 	result.append("description = ").append(description).append("\n");
 	result.append("version = ").append(version).append("\n");
 	result.append("name = ").append(name).append("\n");
+	result.append("instances = ");
+	for (std::vector<Glib::ustring>::iterator it = instances.begin(); it != instances.end(); it++) {
+		result.append(*it).append(",");
+	}
+	result.append("\n");
 
 	return result;
 }
@@ -58,11 +63,11 @@ Glib::ustring Services::getStringArrayProperty(RefPtr<DBus::Proxy> &jobProxy, co
 Glib::ustring Services::getArrayOfStringArraysProperty(RefPtr<DBus::Proxy> &jobProxy, const ustring &propertyName) {
 	Glib::ustring propertyValue;
 
-	VariantContainerBase varianContainer;
+	VariantContainerBase variantContainer;
 
-	jobProxy->get_cached_property(varianContainer, propertyName);
+	jobProxy->get_cached_property(variantContainer, propertyName);
 
-	VariantIter iterator(varianContainer);
+	VariantIter iterator(variantContainer);
 
 	Variant<std::vector<Glib::ustring> > innerVectorContainer;
 	int outerLoop = 0;
@@ -81,6 +86,26 @@ Glib::ustring Services::getArrayOfStringArraysProperty(RefPtr<DBus::Proxy> &jobP
 	}
 
 	return propertyValue;
+}
+
+std::vector<Glib::ustring> Services::readStringContainer(Glib::VariantContainerBase variantContainer) {
+	std::vector<Glib::ustring> result;
+	//cout << variantContainer.get_type_string() << endl;
+	VariantIter iterator(variantContainer);
+
+	VariantBase instance;
+	while (iterator.next_value(instance)) {
+		VariantIter iterator2(instance);
+		Variant<Glib::ustring> instance2;
+		while (iterator2.next_value(instance2)) {
+			//cout << instance2.get_type_string() << endl;
+			//cout << instance2.get() << endl;
+			result.push_back(instance2.get());
+		}
+
+	}
+
+	return result;
 }
 
 void Services::loadUpstartJobs() {
@@ -120,6 +145,11 @@ void Services::loadUpstartJobs() {
 		service.description = getStringProperty(jobProxy, ustring("description"));
 		service.version = getStringProperty(jobProxy, ustring("version"));
 		service.name = getStringProperty(jobProxy, ustring("name"));
+
+		VariantContainerBase variantContainerInstances;
+		Glib::VariantContainerBase parameteres;
+		variantContainerInstances = jobProxy->call_sync("GetAllInstances", parameteres);
+		service.instances = readStringContainer(variantContainerInstances);
 
 //		cout << "whatIsThis : " << whatIsThis << endl;
 
