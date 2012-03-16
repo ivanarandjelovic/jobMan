@@ -15,8 +15,8 @@ mmWindow::mmWindow() {
 	// We need this to precisely return window to it's previous possition
 	set_gravity(Gdk::GRAVITY_STATIC);
 
-	signal_configure_event().connect(sigc::mem_fun(*this, &mmWindow::on_configure_event_handler));
-	signal_window_state_event().connect(sigc::mem_fun(*this, &mmWindow::on_window_state_event_handler));
+	//signal_configure_event().connect(sigc::mem_fun(*this, &mmWindow::on_configure_event_handler));
+	//signal_window_state_event().connect(sigc::mem_fun(*this, &mmWindow::on_window_state_event_handler));
 //
 //	scrolledWindow.set_policy(Gtk::POLICY_AUTOMATIC, Gtk::POLICY_AUTOMATIC);
 //	scrolledWindow.add(treeView);
@@ -46,6 +46,7 @@ mmWindow::mmWindow() {
 
 	detailsLabel.set_text("<empty>");
 	detailsLabel.set_line_wrap(true);
+	detailsLabel.set_alignment(Gtk::ALIGN_START,Gtk::ALIGN_START);
 
 	paned.pack2(detailsLabel, Gtk::FILL);
 
@@ -171,7 +172,7 @@ void mmWindow::setPosition() {
 	paned.set_position(size_width * 2 / 3);
 }
 
-bool mmWindow::on_configure_event_handler(GdkEventConfigure* event) {
+bool mmWindow::on_configure_event(GdkEventConfigure* event) {
 	if (!isMaximized) {
 		size_width = event->width;
 		size_height = event->height;
@@ -179,15 +180,17 @@ bool mmWindow::on_configure_event_handler(GdkEventConfigure* event) {
 		pos_y = event->y;
 		positionValid = true;
 	}
-	return false;
+	// Never forget to call parent method
+	return Gtk::Window::on_configure_event(event);
 }
 
-bool mmWindow::on_window_state_event_handler(GdkEventWindowState* event) {
+bool mmWindow::on_window_state_event(GdkEventWindowState* event) {
 
 	if (event->changed_mask & GDK_WINDOW_STATE_MAXIMIZED) {
 		isMaximized = event->new_window_state & GDK_WINDOW_STATE_MAXIMIZED;
 	}
-	return false;
+	// Never forget to call parent method
+	return Gtk::Window::on_window_state_event(event);
 }
 
 void mmWindow::loadServices(Services &services) {

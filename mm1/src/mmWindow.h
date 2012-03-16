@@ -65,8 +65,10 @@ private:
 protected:
 	// events:
 	void on_job_selected_handler();
-	bool on_configure_event_handler(GdkEventConfigure* event);
-	bool on_window_state_event_handler(GdkEventWindowState* event);
+
+	// Overriden
+	bool on_configure_event(GdkEventConfigure* event);
+	bool on_window_state_event(GdkEventWindowState* event);
 
 };
 
