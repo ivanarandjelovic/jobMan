@@ -44,7 +44,7 @@ private:
 	Glib::ustring getStringProperty(RefPtr<DBus::Proxy> &jobProxy, const ustring &propertyName);
 	Glib::ustring getStringArrayProperty(RefPtr<DBus::Proxy> &jobProxy, const ustring &propertyName);
 	Glib::ustring getArrayOfStringArraysProperty(RefPtr<DBus::Proxy> &jobProxy, const ustring &propertyName);
-	std::vector<Glib::ustring> readStringContainer(Glib::VariantContainerBase variantContainer);
+	std::vector<Glib::ustring> readStructureWithArray(Glib::VariantContainerBase variantContainer);
 };
 
 #endif /* SERVICES_H_ */

@@ -88,7 +88,7 @@ Glib::ustring Services::getArrayOfStringArraysProperty(RefPtr<DBus::Proxy> &jobP
 	return propertyValue;
 }
 
-std::vector<Glib::ustring> Services::readStringContainer(Glib::VariantContainerBase variantContainer) {
+std::vector<Glib::ustring> Services::readStructureWithArray(Glib::VariantContainerBase variantContainer) {
 	std::vector<Glib::ustring> result;
 	//cout << variantContainer.get_type_string() << endl;
 	VariantIter iterator(variantContainer);
@@ -149,7 +149,7 @@ void Services::loadUpstartJobs() {
 		VariantContainerBase variantContainerInstances;
 		Glib::VariantContainerBase parameteres;
 		variantContainerInstances = jobProxy->call_sync("GetAllInstances", parameteres);
-		service.instances = readStringContainer(variantContainerInstances);
+		service.instances = readStructureWithArray(variantContainerInstances);
 
 //		cout << "whatIsThis : " << whatIsThis << endl;
 
