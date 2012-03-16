@@ -131,33 +131,6 @@
 									<listOptionValue builtIn="false" value="freetype"/>
 									<listOptionValue builtIn="false" value="fontconfig"/>
 									<listOptionValue builtIn="false" value="cairo"/>
-									<listOptionValue builtIn="false" value="gconfmm-2.6"/>
-									<listOptionValue builtIn="false" value="glibmm-2.4"/>
-									<listOptionValue builtIn="false" value="gconf-2"/>
-									<listOptionValue builtIn="false" value="gobject-2.0"/>
-									<listOptionValue builtIn="false" value="sigc-2.0"/>
-									<listOptionValue builtIn="false" value="gthread-2.0"/>
-									<listOptionValue builtIn="false" value="rt"/>
-									<listOptionValue builtIn="false" value="glib-2.0"/>
-									<listOptionValue builtIn="false" value="giomm-2.4"/>
-									<listOptionValue builtIn="false" value="gio-2.0"/>
-									<listOptionValue builtIn="false" value="gmodule-2.0"/>
-									<listOptionValue builtIn="false" value="gtkmm-3.0"/>
-									<listOptionValue builtIn="false" value="atkmm-1.6"/>
-									<listOptionValue builtIn="false" value="gdkmm-3.0"/>
-									<listOptionValue builtIn="false" value="pangomm-1.4"/>
-									<listOptionValue builtIn="false" value="gtk-3"/>
-									<listOptionValue builtIn="false" value="cairomm-1.0"/>
-									<listOptionValue builtIn="false" value="gdk-3"/>
-									<listOptionValue builtIn="false" value="atk-1.0"/>
-									<listOptionValue builtIn="false" value="cairo-gobject"/>
-									<listOptionValue builtIn="false" value="pangoft2-1.0"/>
-									<listOptionValue builtIn="false" value="pangocairo-1.0"/>
-									<listOptionValue builtIn="false" value="gdk_pixbuf-2.0"/>
-									<listOptionValue builtIn="false" value="pango-1.0"/>
-									<listOptionValue builtIn="false" value="freetype"/>
-									<listOptionValue builtIn="false" value="fontconfig"/>
-									<listOptionValue builtIn="false" value="cairo"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.2063445900" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
@@ -378,33 +351,6 @@
 							<tool id="cdt.managedbuild.tool.gnu.c.linker.exe.release.1370384032" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.exe.release"/>
 							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.exe.release.1961353711" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.exe.release">
 								<option id="gnu.cpp.link.option.libs.1887322881" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
-									<listOptionValue builtIn="false" value="gconfmm-2.6"/>
-									<listOptionValue builtIn="false" value="glibmm-2.4"/>
-									<listOptionValue builtIn="false" value="gconf-2"/>
-									<listOptionValue builtIn="false" value="gobject-2.0"/>
-									<listOptionValue builtIn="false" value="sigc-2.0"/>
-									<listOptionValue builtIn="false" value="gthread-2.0"/>
-									<listOptionValue builtIn="false" value="rt"/>
-									<listOptionValue builtIn="false" value="glib-2.0"/>
-									<listOptionValue builtIn="false" value="giomm-2.4"/>
-									<listOptionValue builtIn="false" value="gio-2.0"/>
-									<listOptionValue builtIn="false" value="gmodule-2.0"/>
-									<listOptionValue builtIn="false" value="gtkmm-3.0"/>
-									<listOptionValue builtIn="false" value="atkmm-1.6"/>
-									<listOptionValue builtIn="false" value="gdkmm-3.0"/>
-									<listOptionValue builtIn="false" value="pangomm-1.4"/>
-									<listOptionValue builtIn="false" value="gtk-3"/>
-									<listOptionValue builtIn="false" value="cairomm-1.0"/>
-									<listOptionValue builtIn="false" value="gdk-3"/>
-									<listOptionValue builtIn="false" value="atk-1.0"/>
-									<listOptionValue builtIn="false" value="cairo-gobject"/>
-									<listOptionValue builtIn="false" value="pangoft2-1.0"/>
-									<listOptionValue builtIn="false" value="pangocairo-1.0"/>
-									<listOptionValue builtIn="false" value="gdk_pixbuf-2.0"/>
-									<listOptionValue builtIn="false" value="pango-1.0"/>
-									<listOptionValue builtIn="false" value="freetype"/>
-									<listOptionValue builtIn="false" value="fontconfig"/>
-									<listOptionValue builtIn="false" value="cairo"/>
 									<listOptionValue builtIn="false" value="gconfmm-2.6"/>
 									<listOptionValue builtIn="false" value="glibmm-2.4"/>
 									<listOptionValue builtIn="false" value="gconf-2"/>

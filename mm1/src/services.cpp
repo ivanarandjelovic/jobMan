@@ -9,22 +9,25 @@
 
 using namespace std;
 
-void Job::toOutput() {
-	cout << "Job:" << endl;
-	cout << "dbusObjectPath = " << dbusObjectPath << endl;
-	cout << "startOn = " << startOn << endl;
-	cout << "stopOn = " << stopOn << endl;
-	cout << "emits = " << emits << endl;
-	cout << "author = " << author << endl;
-	cout << "description = " << description << endl;
-	cout << "version = " << version << endl;
-	cout << "name = " << name << endl;
+Glib::ustring Job::toString() {
+	Glib::ustring result;
+	result.append("Job:\n");
+	result.append("dbusObjectPath = ").append(dbusObjectPath).append("\n");
+	result.append("startOn = ").append(startOn).append("\n");
+	result.append("stopOn = ").append(stopOn).append("\n");
+	result.append("emits = ").append(emits).append("\n");
+	result.append("author = ").append(author).append("\n");
+	result.append("description = ").append(description).append("\n");
+	result.append("version = ").append(version).append("\n");
+	result.append("name = ").append(name).append("\n");
+
+	return result;
 }
 
 Services::~Services() {
 	g_message("at end, upstart jobs listed START:");
 	for (std::list<Job>::iterator it = upstartJobs.begin(); it != upstartJobs.end(); it++) {
-		it->toOutput();
+		cout << it->toString() << endl;
 	}
 	g_message("at end, upstart jobs listed END.");
 }

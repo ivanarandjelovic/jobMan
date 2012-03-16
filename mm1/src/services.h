@@ -26,7 +26,7 @@ public:
 	Glib::ustring version;
 	Glib::ustring name;
 
-	void toOutput();
+	Glib::ustring toString();
 };
 
 class Services {

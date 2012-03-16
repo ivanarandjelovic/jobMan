@@ -18,11 +18,13 @@ class MyModelColumns: public Gtk::TreeModel::ColumnRecord {
 public:
 	Gtk::TreeModelColumn<Glib::ustring> jobName;
 	Gtk::TreeModelColumn<Glib::ustring> description;
+	Gtk::TreeModelColumn<Glib::ustring> completeDescription;
 	//Gtk::TreeModelColumn< Glib::RefPtr<Gdk::Pixbuf> > thumbnail;
 
 	MyModelColumns() {
 		add(jobName);
 		add(description);
+		add(completeDescription);
 		//add (thumbnail);
 	}
 };
@@ -63,7 +65,7 @@ private:
 
 protected:
 	// events:
-	void on_job_selected(const Gtk::SelectionData&, const unsigned int&);
+	void on_job_selected();
 };
 
 #endif /* MMWINDOW_H_ */

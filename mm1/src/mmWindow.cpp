@@ -35,7 +35,8 @@ mmWindow::mmWindow() {
 	treeModel = Gtk::ListStore::create(modelColumns);
 
 	treeView.set_model(treeModel);
-	treeView.signal_selection_received().connect(sigc::mem_fun(*this, &mmWindow::on_job_selected));
+	//treeView.signal_selection_received().connect(sigc::mem_fun(*this, &mmWindow::on_job_selected));
+	treeView.get_selection()->signal_changed().connect(sigc::mem_fun(*this, &mmWindow::on_job_selected));
 
 	paned.pack1(scrolledWindow, true, true);
 	paned.pack2(detailsLabel, true, true);
@@ -46,8 +47,13 @@ mmWindow::mmWindow() {
 //	this->signal_window_state_event().connect(sigc::mem_fun(*this, &mmWindow::on_window_state_event));
 }
 
-void mmWindow::on_job_selected(const Gtk::SelectionData&, const unsigned int&) {
-	g_message("aha");
+void mmWindow::on_job_selected() {
+	//g_message("aha");
+
+	Gtk::TreeIter iter = treeView.get_selection()->get_selected();
+	if (iter) {
+		detailsLabel.set_text(iter->get_value(modelColumns.completeDescription));
+	}
 }
 
 /**
@@ -89,8 +95,8 @@ void mmWindow::loadPosition(const Glib::ustring &windowConfPath) {
 	Glib::ustring key;
 	Gnome::Conf::Value value;
 
-	// It seems rather wrong to assume operation was OK, and then to mark it as failed
-	// later if we encounter some problems, but for now I do it this way (need more C++ practice :) )
+// It seems rather wrong to assume operation was OK, and then to mark it as failed
+// later if we encounter some problems, but for now I do it this way (need more C++ practice :) )
 	positionValid = true;
 	size_height = loadConfInt(gConfClient, windowConfPath, "/size_height");
 	size_width = loadConfInt(gConfClient, windowConfPath, "/size_width");
@@ -149,7 +155,7 @@ void mmWindow::setPosition() {
 		}
 	}
 
-	// Adjust panel and list:
+// Adjust panel and list:
 //	treeView.set_size_request(size_width * 2 / 3, size_height);
 //	scrolledWindow.set_size_request(size_width * 2 / 3, size_height);
 	paned.set_position(size_width * 2 / 3);
@@ -176,14 +182,15 @@ bool mmWindow::on_window_state_event(GdkEventWindowState* event) {
 
 void mmWindow::loadServices(Services &services) {
 
-	// Add data into the model
+// Add data into the model
 	for (std::list<Job>::iterator it = services.upstartJobs.begin(); it != services.upstartJobs.end(); it++) {
 		Gtk::TreeModel::Row row = *(treeModel->append());
 		row[modelColumns.jobName] = it->name;
 		row[modelColumns.description] = it->description;
+		row[modelColumns.completeDescription] = it->toString();
 	}
 
-	// Show columns in the vew
+// Show columns in the vew
 	treeView.append_column("Name", modelColumns.jobName);
 	treeView.append_column("Description", modelColumns.description);
 }
