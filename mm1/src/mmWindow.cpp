@@ -42,16 +42,17 @@ mmWindow::mmWindow() {
 	//treeView.signal_selection_received().connect(sigc::mem_fun(*this, &mmWindow::on_job_selected));
 	treeView.get_selection()->signal_changed().connect(sigc::mem_fun(*this, &mmWindow::on_job_selected_handler));
 
-	paned.pack1(scrolledWindow,Gtk::FILL);
+	paned.pack1(scrolledWindow, Gtk::FILL);
 
 	//detailsLabel.set_markup("&lt;empty&gt;");
 	detailsLabel.set_line_wrap(true);
 	detailsLabel.set_use_markup(true);
-	detailsLabel.set_alignment(Gtk::ALIGN_START,Gtk::ALIGN_START);
+	detailsLabel.set_alignment(Gtk::ALIGN_START, Gtk::ALIGN_START);
 
 	paned.pack2(detailsLabel, Gtk::FILL);
 
 	show_all_children();
+
 
 	// This seems to be not needed, I would really like to see some half-decent documentation
 //	this->signal_window_state_event().connect(sigc::mem_fun(*this, &mmWindow::on_window_state_event));
@@ -95,6 +96,9 @@ void mmWindow::savePosition(const Glib::ustring &windowConfPath) {
 	key.erase().append(windowConfPath).append("/isMaximized");
 	gConfClient->set(key, isMaximized);
 
+	key.erase().append(windowConfPath).append("/panelSeparator");
+	gConfClient->set(key, paned.get_position());
+
 }
 
 void mmWindow::loadPosition(const Glib::ustring &windowConfPath) {
@@ -117,6 +121,10 @@ void mmWindow::loadPosition(const Glib::ustring &windowConfPath) {
 	isMaximized = loadConfBool(gConfClient, windowConfPath, "/isMaximized");
 
 	setPosition();
+
+	int panelSeparator = loadConfInt(gConfClient, windowConfPath, "/panelSeparator");
+	paned.set_position(panelSeparator);
+
 }
 
 int mmWindow::loadConfInt(Glib::RefPtr<Gnome::Conf::Client> &gConfClient, const Glib::ustring &windowConfPath,

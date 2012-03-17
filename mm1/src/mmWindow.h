@@ -36,7 +36,6 @@ class mmWindow: public Gtk::Window {
 public:
 	mmWindow();
 
-
 	void savePosition(const Glib::ustring &windowConfPath);
 	void loadPosition(const Glib::ustring &windowConfPath);
 
@@ -57,8 +56,10 @@ private:
 	Gtk::Paned paned;
 
 	Gtk::ScrolledWindow scrolledWindow;
-	Gtk::TreeView treeView;
+
 	MyModelColumns modelColumns;
+
+	Gtk::TreeView treeView;
 	Glib::RefPtr<Gtk::ListStore> treeModel;
 
 	Gtk::Label detailsLabel;
