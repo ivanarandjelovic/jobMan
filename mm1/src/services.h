@@ -11,9 +11,25 @@
 #include <giomm.h>
 #include <iostream>
 #include <sstream>
+#include <algorithm>
+#include <functional>
 
 using namespace Glib;
 using namespace Gio;
+
+/**
+ * Respresents one running instance of the upstart job
+ */
+class JobInstance {
+public:
+	Glib::ustring dbusObjectPath;
+	Glib::ustring goal;
+	Glib::ustring name;
+	Glib::ustring state;
+	JobInstance(Glib::ustring dbusObjectPath) {
+		this->dbusObjectPath = dbusObjectPath;
+	}
+};
 
 class Job {
 public:
@@ -25,7 +41,7 @@ public:
 	Glib::ustring description;
 	Glib::ustring version;
 	Glib::ustring name;
-	std::vector<Glib::ustring> instances;
+	std::vector<JobInstance> instances;
 
 	Glib::ustring toString();
 };
@@ -37,14 +53,16 @@ public:
 	void loadUpstartJobs();
 	void loadSysVJobs();
 
-	std::list<Job> upstartJobs;
-private:
+	std::vector<Job> upstartJobs;
 
+
+private:
 
 	Glib::ustring getStringProperty(RefPtr<DBus::Proxy> &jobProxy, const ustring &propertyName);
 	Glib::ustring getStringArrayProperty(RefPtr<DBus::Proxy> &jobProxy, const ustring &propertyName);
 	Glib::ustring getArrayOfStringArraysProperty(RefPtr<DBus::Proxy> &jobProxy, const ustring &propertyName);
-	std::vector<Glib::ustring> readStructureWithArray(Glib::VariantContainerBase variantContainer);
+	std::vector<JobInstance> readStructureWithArray(Glib::VariantContainerBase variantContainer);
+	void loadInstance(RefPtr<DBus::Proxy> &jobProxy, JobInstance &jobInstance);
 };
 
 #endif /* SERVICES_H_ */

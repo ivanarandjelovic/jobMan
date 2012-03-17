@@ -196,7 +196,7 @@ bool mmWindow::on_window_state_event(GdkEventWindowState* event) {
 void mmWindow::loadServices(Services &services) {
 
 // Add data into the model
-	for (std::list<Job>::iterator it = services.upstartJobs.begin(); it != services.upstartJobs.end(); it++) {
+	for (std::vector<Job>::iterator it = services.upstartJobs.begin(); it != services.upstartJobs.end(); it++) {
 		Gtk::TreeModel::Row row = *(treeModel->append());
 		row[modelColumns.jobName] = it->name;
 		row[modelColumns.description] = it->description;

@@ -21,8 +21,8 @@ Glib::ustring Job::toString() {
 	result.append("version = ").append(version).append("\n");
 	result.append("name = ").append(name).append("\n");
 	result.append("instances = ");
-	for (std::vector<Glib::ustring>::iterator it = instances.begin(); it != instances.end(); it++) {
-		result.append(*it).append(",");
+	for (std::vector<JobInstance>::iterator it = instances.begin(); it != instances.end(); it++) {
+		result.append(it->dbusObjectPath).append(",");
 	}
 	result.append("\n");
 
@@ -31,7 +31,7 @@ Glib::ustring Job::toString() {
 
 Services::~Services() {
 	g_message("at end, upstart jobs listed START:");
-	for (std::list<Job>::iterator it = upstartJobs.begin(); it != upstartJobs.end(); it++) {
+	for (std::vector<Job>::iterator it = upstartJobs.begin(); it != upstartJobs.end(); it++) {
 		cout << it->toString() << endl;
 	}
 	g_message("at end, upstart jobs listed END.");
@@ -88,8 +88,8 @@ Glib::ustring Services::getArrayOfStringArraysProperty(RefPtr<DBus::Proxy> &jobP
 	return propertyValue;
 }
 
-std::vector<Glib::ustring> Services::readStructureWithArray(Glib::VariantContainerBase variantContainer) {
-	std::vector<Glib::ustring> result;
+std::vector<JobInstance> Services::readStructureWithArray(Glib::VariantContainerBase variantContainer) {
+	std::vector<JobInstance> result;
 	//cout << variantContainer.get_type_string() << endl;
 	VariantIter iterator(variantContainer);
 
@@ -100,12 +100,26 @@ std::vector<Glib::ustring> Services::readStructureWithArray(Glib::VariantContain
 		while (iterator2.next_value(instance2)) {
 			//cout << instance2.get_type_string() << endl;
 			//cout << instance2.get() << endl;
-			result.push_back(instance2.get());
+			JobInstance jobInstace(instance2.get());
+			result.push_back(jobInstace);
 		}
 
 	}
 
 	return result;
+}
+
+class CompareJobs {
+public:
+	bool operator()(const Job &j1, const Job &j2) const {
+		return (j1.name) < (j2.name);
+	}
+};
+
+void Services::loadInstance(RefPtr<DBus::Proxy> &jobProxy, JobInstance &jobInstance) {
+	jobInstance.goal = getStringProperty(jobProxy, "goal");
+	jobInstance.name = getStringProperty(jobProxy, "name");
+jobInstance.state = getStringProperty(jobProxy, "state");
 }
 
 void Services::loadUpstartJobs() {
@@ -151,12 +165,23 @@ void Services::loadUpstartJobs() {
 		variantContainerInstances = jobProxy->call_sync("GetAllInstances", parameteres);
 		service.instances = readStructureWithArray(variantContainerInstances);
 
+		for(std::vector<JobInstance>::iterator instanceIterator = service.instances.begin(); instanceIterator != service.instances.end(); instanceIterator++) {
+			RefPtr<DBus::Proxy> jobProxy = DBus::Proxy::create_sync(busConnection, "com.ubuntu.Upstart", instanceIterator->dbusObjectPath,
+							"com.ubuntu.Upstart0_6.Instance");
+
+			loadInstance(jobProxy, *instanceIterator);
+		}
+
+
 //		cout << "whatIsThis : " << whatIsThis << endl;
 
 		upstartJobs.push_back(service);
 	}
 
 	busConnection->close_sync();
+
+	// sort services:
+	sort(upstartJobs.begin(), upstartJobs.end(), CompareJobs());
 }
 
 void Services::loadSysVJobs() {
