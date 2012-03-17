@@ -42,8 +42,12 @@ public:
 	Glib::ustring version;
 	Glib::ustring name;
 	std::vector<JobInstance> instances;
+	bool someInstanceRunning;
 
 	Glib::ustring toString();
+	Job() :
+			someInstanceRunning(false) {
+	}
 };
 
 class Services {
@@ -54,7 +58,6 @@ public:
 	void loadSysVJobs();
 
 	std::vector<Job> upstartJobs;
-
 
 private:
 

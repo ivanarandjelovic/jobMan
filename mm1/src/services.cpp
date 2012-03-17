@@ -9,20 +9,29 @@
 
 using namespace std;
 
+#define START_BOLD "<span weight=\"bold\">"
+#define END_BOLD "</span>"
+
 Glib::ustring Job::toString() {
 	Glib::ustring result;
-	result.append("Job:\n");
-	result.append("dbusObjectPath = ").append(dbusObjectPath).append("\n");
-	result.append("startOn = ").append(startOn).append("\n");
-	result.append("stopOn = ").append(stopOn).append("\n");
-	result.append("emits = ").append(emits).append("\n");
-	result.append("author = ").append(author).append("\n");
-	result.append("description = ").append(description).append("\n");
-	result.append("version = ").append(version).append("\n");
-	result.append("name = ").append(name).append("\n");
-	result.append("instances = ");
+	result.append(START_BOLD"Job:"END_BOLD"\n");
+	result.append(START_BOLD"name"END_BOLD" = ").append(name).append("\n");
+	result.append(START_BOLD"description"END_BOLD" = ").append(description).append("\n");
+	result.append(START_BOLD"author"END_BOLD" = ").append(Glib::Markup::escape_text(author)).append("\n");
+	result.append(START_BOLD"version"END_BOLD" = ").append(version).append("\n");
+	result.append(START_BOLD"startOn"END_BOLD" = ").append(startOn).append("\n");
+	result.append(START_BOLD"stopOn"END_BOLD" = ").append(stopOn).append("\n");
+	result.append(START_BOLD"emits"END_BOLD" = ").append(emits).append("\n");
+	result.append(START_BOLD"dbusObjectPath"END_BOLD" = ").append(dbusObjectPath).append("\n");
+	result.append(START_BOLD"\ninstances:"END_BOLD"\n\n");
 	for (std::vector<JobInstance>::iterator it = instances.begin(); it != instances.end(); it++) {
-		result.append(it->dbusObjectPath).append(",");
+		bool useGreen = false;
+		if (it->state == "running") {
+			useGreen = true;
+		}
+		result.append(START_BOLD"  name"END_BOLD" =").append(it->name).append(",").append(
+				(useGreen ? "<span color=\"green\">" : "")).append(it->state).append((useGreen ? "</span>" : "")).append(
+				"\n");
 	}
 	result.append("\n");
 
@@ -119,7 +128,7 @@ public:
 void Services::loadInstance(RefPtr<DBus::Proxy> &jobProxy, JobInstance &jobInstance) {
 	jobInstance.goal = getStringProperty(jobProxy, "goal");
 	jobInstance.name = getStringProperty(jobProxy, "name");
-jobInstance.state = getStringProperty(jobProxy, "state");
+	jobInstance.state = getStringProperty(jobProxy, "state");
 }
 
 void Services::loadUpstartJobs() {
@@ -165,13 +174,16 @@ void Services::loadUpstartJobs() {
 		variantContainerInstances = jobProxy->call_sync("GetAllInstances", parameteres);
 		service.instances = readStructureWithArray(variantContainerInstances);
 
-		for(std::vector<JobInstance>::iterator instanceIterator = service.instances.begin(); instanceIterator != service.instances.end(); instanceIterator++) {
-			RefPtr<DBus::Proxy> jobProxy = DBus::Proxy::create_sync(busConnection, "com.ubuntu.Upstart", instanceIterator->dbusObjectPath,
-							"com.ubuntu.Upstart0_6.Instance");
+		for (std::vector<JobInstance>::iterator instanceIterator = service.instances.begin();
+				instanceIterator != service.instances.end(); instanceIterator++) {
+			RefPtr<DBus::Proxy> jobProxy = DBus::Proxy::create_sync(busConnection, "com.ubuntu.Upstart",
+					instanceIterator->dbusObjectPath, "com.ubuntu.Upstart0_6.Instance");
 
 			loadInstance(jobProxy, *instanceIterator);
+			if(instanceIterator->state == "running") {
+				service.someInstanceRunning = true;
+			}
 		}
-
 
 //		cout << "whatIsThis : " << whatIsThis << endl;
 

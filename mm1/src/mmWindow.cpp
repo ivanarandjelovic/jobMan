@@ -44,8 +44,9 @@ mmWindow::mmWindow() {
 
 	paned.pack1(scrolledWindow,Gtk::FILL);
 
-	detailsLabel.set_text("<empty>");
+	//detailsLabel.set_markup("&lt;empty&gt;");
 	detailsLabel.set_line_wrap(true);
+	detailsLabel.set_use_markup(true);
 	detailsLabel.set_alignment(Gtk::ALIGN_START,Gtk::ALIGN_START);
 
 	paned.pack2(detailsLabel, Gtk::FILL);
@@ -63,7 +64,7 @@ void mmWindow::on_job_selected_handler() {
 	if (iter) {
 		//std::cout << iter->get_value(modelColumns.jobName) << std::endl;
 		//std::cout << iter->get_value(modelColumns.completeDescription) << std::endl;
-		detailsLabel.set_text(iter->get_value(modelColumns.completeDescription));
+		detailsLabel.set_markup(iter->get_value(modelColumns.completeDescription));
 	}
 }
 
@@ -200,10 +201,13 @@ void mmWindow::loadServices(Services &services) {
 		Gtk::TreeModel::Row row = *(treeModel->append());
 		row[modelColumns.jobName] = it->name;
 		row[modelColumns.description] = it->description;
+		row[modelColumns.someInstanceRunning] = it->someInstanceRunning;
 		row[modelColumns.completeDescription] = it->toString();
 	}
 
 // Show columns in the vew
 	treeView.append_column("Name", modelColumns.jobName);
 	treeView.append_column("Description", modelColumns.description);
+	treeView.append_column("Running", modelColumns.someInstanceRunning);
+
 }

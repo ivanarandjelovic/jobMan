@@ -18,12 +18,14 @@ class MyModelColumns: public Gtk::TreeModel::ColumnRecord {
 public:
 	Gtk::TreeModelColumn<Glib::ustring> jobName;
 	Gtk::TreeModelColumn<Glib::ustring> description;
+	Gtk::TreeModelColumn<bool> someInstanceRunning;
 	Gtk::TreeModelColumn<Glib::ustring> completeDescription;
 	//Gtk::TreeModelColumn< Glib::RefPtr<Gdk::Pixbuf> > thumbnail;
 
 	MyModelColumns() {
 		add(jobName);
 		add(description);
+		add(someInstanceRunning);
 		add(completeDescription);
 		//add (thumbnail);
 	}
