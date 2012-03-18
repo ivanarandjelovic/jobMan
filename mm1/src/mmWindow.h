@@ -62,6 +62,11 @@ private:
 	Gtk::TreeView treeView;
 	Glib::RefPtr<Gtk::ListStore> treeModel;
 
+	Gtk::VBox vBoxRightOuter;
+	Gtk::HBox hBoxRightButtons;
+	Gtk::Button buttonStart;
+	Gtk::Button buttonStop;
+	Gtk::Button buttonReefresh;
 	Gtk::Label detailsLabel;
 	//Gtk::Box m_VBox;
 

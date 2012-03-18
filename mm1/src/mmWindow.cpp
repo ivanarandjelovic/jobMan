@@ -44,12 +44,29 @@ mmWindow::mmWindow() {
 
 	paned.pack1(scrolledWindow, Gtk::FILL);
 
+	vBoxRightOuter.pack_start(detailsLabel, true, true, 2);// add(detailsLabel);
+	vBoxRightOuter.pack_start(hBoxRightButtons, false,true, 2);
+	vBoxRightOuter.pack_start(buttonReefresh, false, true, 2);
+
+	hBoxRightButtons.pack_start(buttonStart, true, true, 2);
+	hBoxRightButtons.pack_start(buttonStop, true, true, 2);
+	//hBoxRightButtons.set_spacing(2);
+
+	buttonStart.set_label("Start");
+
+	// Initially buttons are disabled
+	buttonStart.set_sensitive(false);
+	buttonStop.set_sensitive(false);
+
+	buttonStop.set_label("Stop");
+	buttonReefresh.set_label("Refresh list");
+
 	//detailsLabel.set_markup("&lt;empty&gt;");
 	detailsLabel.set_line_wrap(true);
 	detailsLabel.set_use_markup(true);
 	detailsLabel.set_alignment(Gtk::ALIGN_START, Gtk::ALIGN_START);
 
-	paned.pack2(detailsLabel, Gtk::FILL);
+	paned.pack2(vBoxRightOuter, Gtk::FILL);
 
 	show_all_children();
 
