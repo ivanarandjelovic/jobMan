@@ -215,7 +215,9 @@ void mmWindow::loadServices(Services &services) {
 
 // Show columns in the vew
 	treeView.append_column("Name", modelColumns.jobName);
+	treeView.get_column(0)->set_expand(true);
 	treeView.append_column("Description", modelColumns.description);
+	treeView.get_column(1)->set_expand(true);
 	treeView.append_column("Running", modelColumns.someInstanceRunning);
 
 }
