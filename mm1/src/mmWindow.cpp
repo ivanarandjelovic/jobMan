@@ -31,9 +31,9 @@ mmWindow::mmWindow() {
 	// Show columns in the vew
 	treeView.append_column("Name", modelColumns.jobName);
 	treeView.get_column(0)->set_expand(true);
-	treeView.append_column("Description", modelColumns.description);
-	treeView.get_column(1)->set_expand(true);
 	treeView.append_column("Running", modelColumns.someInstanceRunning);
+	treeView.append_column("Description", modelColumns.description);
+	treeView.get_column(2)->set_expand(true);
 
 	paned.pack1(scrolledWindow, Gtk::FILL);
 
@@ -41,6 +41,7 @@ mmWindow::mmWindow() {
 
 
 	hBoxRightButtons.pack_start(buttonStart, true, true, 2);
+	hBoxRightButtons.pack_start(buttonRestart, true, true, 2);
 	hBoxRightButtons.pack_start(buttonStop, true, true, 2);
 
 	hBoxRightLower.pack_start(buttonReefresh, true, true, 2);
@@ -51,13 +52,15 @@ mmWindow::mmWindow() {
 
 
 	buttonStart.set_label("Start");
+	buttonRestart.set_label("Restart");
+	buttonStop.set_label("Stop");
+	buttonReefresh.set_label("Refresh list");
 
 	// Initially buttons are disabled
 	buttonStart.set_sensitive(false);
+	buttonRestart.set_sensitive(false);
 	buttonStop.set_sensitive(false);
 
-	buttonStop.set_label("Stop");
-	buttonReefresh.set_label("Refresh list");
 	buttonReefresh.signal_clicked().connect(sigc::mem_fun(*this, &mmWindow::on_refresh_clicked));
 
 	//detailsLabel.set_markup("&lt;empty&gt;");
@@ -81,7 +84,16 @@ void mmWindow::on_job_selected_handler() {
 		//std::cout << iter->get_value(modelColumns.jobName) << std::endl;
 		//std::cout << iter->get_value(modelColumns.completeDescription) << std::endl;
 		detailsLabel.set_markup(iter->get_value(modelColumns.completeDescription));
-
+		selectedJob = iter->get_value(modelColumns.job);
+		if(selectedJob.someInstanceRunning) {
+			buttonStop.set_sensitive(true);
+			buttonRestart.set_sensitive(false);
+			buttonStart.set_sensitive(false);
+		} else {
+			buttonStop.set_sensitive(false);
+			buttonRestart.set_sensitive(true);
+			buttonStart.set_sensitive(true);
+		}
 	}
 }
 

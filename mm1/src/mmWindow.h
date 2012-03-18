@@ -45,6 +45,7 @@ public:
 
 private:
 	Services services;
+	Job selectedJob;
 	bool isMaximized;
 	int size_width, size_height, pos_x, pos_y;
 	bool positionValid;
@@ -70,6 +71,7 @@ private:
 	Gtk::HBox hBoxRightButtons;
 	Gtk::HBox hBoxRightLower;
 	Gtk::Button buttonStart;
+	Gtk::Button buttonRestart;
 	Gtk::Button buttonStop;
 	Gtk::Button buttonReefresh;
 	Gtk::Label detailsLabel;
