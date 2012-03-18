@@ -36,9 +36,9 @@ int main(int argc, char *argv[]) {
 
 	mmWindow window;
 
-	window.loadPosition(configPath);
-
 	window.loadServices();
+
+	window.loadPosition(configPath);
 
 	Gtk::Main::run(window);
 

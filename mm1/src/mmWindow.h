@@ -16,6 +16,7 @@
 
 class MyModelColumns: public Gtk::TreeModel::ColumnRecord {
 public:
+	Gtk::TreeModelColumn<Job> job;
 	Gtk::TreeModelColumn<Glib::ustring> jobName;
 	Gtk::TreeModelColumn<Glib::ustring> description;
 	Gtk::TreeModelColumn<bool> someInstanceRunning;
@@ -23,6 +24,7 @@ public:
 	//Gtk::TreeModelColumn< Glib::RefPtr<Gdk::Pixbuf> > thumbnail;
 
 	MyModelColumns() {
+		add(job);
 		add(jobName);
 		add(description);
 		add(someInstanceRunning);
@@ -57,6 +59,7 @@ private:
 	Gtk::Paned paned;
 
 	Gtk::ScrolledWindow scrolledWindow;
+	Gtk::ScrolledWindow scrolledWindowLabel;
 
 	MyModelColumns modelColumns;
 
@@ -65,6 +68,7 @@ private:
 
 	Gtk::VBox vBoxRightOuter;
 	Gtk::HBox hBoxRightButtons;
+	Gtk::HBox hBoxRightLower;
 	Gtk::Button buttonStart;
 	Gtk::Button buttonStop;
 	Gtk::Button buttonReefresh;

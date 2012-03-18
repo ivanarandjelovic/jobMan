@@ -15,20 +15,6 @@ mmWindow::mmWindow() {
 	// We need this to precisely return window to it's previous possition
 	set_gravity(Gdk::GRAVITY_STATIC);
 
-	//signal_configure_event().connect(sigc::mem_fun(*this, &mmWindow::on_configure_event_handler));
-	//signal_window_state_event().connect(sigc::mem_fun(*this, &mmWindow::on_window_state_event_handler));
-//
-//	scrolledWindow.set_policy(Gtk::POLICY_AUTOMATIC, Gtk::POLICY_AUTOMATIC);
-//	scrolledWindow.add(treeView);
-//	treeModel = Gtk::ListStore::create(modelColumns);
-//
-//	treeView.set_model(treeModel);
-//	//add(scrolledWindow);
-//
-//	m_VBox.pack_start(scrolledWindow);
-//	m_VBox.pack_start(detailsLabel, Gtk::PACK_SHRINK);
-//	add(m_VBox);
-
 	paned.set_hexpand(true);
 	paned.set_vexpand(true);
 	add(paned);
@@ -51,13 +37,18 @@ mmWindow::mmWindow() {
 
 	paned.pack1(scrolledWindow, Gtk::FILL);
 
-	vBoxRightOuter.pack_start(detailsLabel, true, true, 2); // add(detailsLabel);
-	vBoxRightOuter.pack_start(hBoxRightButtons, false, true, 2);
-	vBoxRightOuter.pack_start(buttonReefresh, false, true, 2);
+	scrolledWindowLabel.add(detailsLabel);
+
 
 	hBoxRightButtons.pack_start(buttonStart, true, true, 2);
 	hBoxRightButtons.pack_start(buttonStop, true, true, 2);
-	//hBoxRightButtons.set_spacing(2);
+
+	hBoxRightLower.pack_start(buttonReefresh, true, true, 2);
+
+	vBoxRightOuter.pack_start(scrolledWindowLabel, true, true, 2); // add(detailsLabel);
+	vBoxRightOuter.pack_start(hBoxRightButtons, false, true, 2);
+	vBoxRightOuter.pack_start(hBoxRightLower, false, true, 2);
+
 
 	buttonStart.set_label("Start");
 
@@ -76,12 +67,10 @@ mmWindow::mmWindow() {
 
 	paned.pack2(vBoxRightOuter, Gtk::FILL);
 
-	show_all_children();
-
 	services.loadUpstartJobs();
 
-	// This seems to be not needed, I would really like to see some half-decent documentation
-//	this->signal_window_state_event().connect(sigc::mem_fun(*this, &mmWindow::on_window_state_event));
+	show_all_children();
+
 }
 
 void mmWindow::on_job_selected_handler() {
@@ -92,6 +81,7 @@ void mmWindow::on_job_selected_handler() {
 		//std::cout << iter->get_value(modelColumns.jobName) << std::endl;
 		//std::cout << iter->get_value(modelColumns.completeDescription) << std::endl;
 		detailsLabel.set_markup(iter->get_value(modelColumns.completeDescription));
+
 	}
 }
 
@@ -202,6 +192,9 @@ void mmWindow::setPosition() {
 		} else {
 			unmaximize();
 		}
+	} else {
+		resize(640*1.5, 400*1.5);
+		set_position(Gtk::WIN_POS_CENTER);
 	}
 }
 
@@ -233,6 +226,7 @@ void mmWindow::loadServices() {
 // Add data into the model
 	for (std::vector<Job>::iterator it = services.upstartJobs.begin(); it != services.upstartJobs.end(); it++) {
 		Gtk::TreeModel::Row row = *(treeModel->append());
+		row[modelColumns.job] = *it;
 		row[modelColumns.jobName] = it->name;
 		row[modelColumns.description] = it->description;
 		row[modelColumns.someInstanceRunning] = it->someInstanceRunning;
