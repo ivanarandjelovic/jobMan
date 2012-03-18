@@ -39,9 +39,10 @@ public:
 	void savePosition(const Glib::ustring &windowConfPath);
 	void loadPosition(const Glib::ustring &windowConfPath);
 
-	void loadServices(Services &services);
+	void loadServices();
 
 private:
+	Services services;
 	bool isMaximized;
 	int size_width, size_height, pos_x, pos_y;
 	bool positionValid;
@@ -73,6 +74,7 @@ private:
 protected:
 	// events:
 	void on_job_selected_handler();
+	void on_refresh_clicked();
 
 	// Overriden
 	bool on_configure_event(GdkEventConfigure* event);

@@ -42,10 +42,17 @@ mmWindow::mmWindow() {
 	//treeView.signal_selection_received().connect(sigc::mem_fun(*this, &mmWindow::on_job_selected));
 	treeView.get_selection()->signal_changed().connect(sigc::mem_fun(*this, &mmWindow::on_job_selected_handler));
 
+	// Show columns in the vew
+	treeView.append_column("Name", modelColumns.jobName);
+	treeView.get_column(0)->set_expand(true);
+	treeView.append_column("Description", modelColumns.description);
+	treeView.get_column(1)->set_expand(true);
+	treeView.append_column("Running", modelColumns.someInstanceRunning);
+
 	paned.pack1(scrolledWindow, Gtk::FILL);
 
-	vBoxRightOuter.pack_start(detailsLabel, true, true, 2);// add(detailsLabel);
-	vBoxRightOuter.pack_start(hBoxRightButtons, false,true, 2);
+	vBoxRightOuter.pack_start(detailsLabel, true, true, 2); // add(detailsLabel);
+	vBoxRightOuter.pack_start(hBoxRightButtons, false, true, 2);
 	vBoxRightOuter.pack_start(buttonReefresh, false, true, 2);
 
 	hBoxRightButtons.pack_start(buttonStart, true, true, 2);
@@ -60,6 +67,7 @@ mmWindow::mmWindow() {
 
 	buttonStop.set_label("Stop");
 	buttonReefresh.set_label("Refresh list");
+	buttonReefresh.signal_clicked().connect(sigc::mem_fun(*this, &mmWindow::on_refresh_clicked));
 
 	//detailsLabel.set_markup("&lt;empty&gt;");
 	detailsLabel.set_line_wrap(true);
@@ -70,6 +78,7 @@ mmWindow::mmWindow() {
 
 	show_all_children();
 
+	services.loadUpstartJobs();
 
 	// This seems to be not needed, I would really like to see some half-decent documentation
 //	this->signal_window_state_event().connect(sigc::mem_fun(*this, &mmWindow::on_window_state_event));
@@ -140,8 +149,11 @@ void mmWindow::loadPosition(const Glib::ustring &windowConfPath) {
 	setPosition();
 
 	int panelSeparator = loadConfInt(gConfClient, windowConfPath, "/panelSeparator");
-	paned.set_position(panelSeparator);
-
+	if (positionValid) {
+		paned.set_position(panelSeparator);
+	} else {
+		paned.set_position(size_width * 2 / 3);
+	}
 }
 
 int mmWindow::loadConfInt(Glib::RefPtr<Gnome::Conf::Client> &gConfClient, const Glib::ustring &windowConfPath,
@@ -191,11 +203,6 @@ void mmWindow::setPosition() {
 			unmaximize();
 		}
 	}
-
-// Adjust panel and list:
-//	treeView.set_size_request(size_width * 2 / 3, size_height);
-//	scrolledWindow.set_size_request(size_width * 2 / 3, size_height);
-	paned.set_position(size_width * 2 / 3);
 }
 
 bool mmWindow::on_configure_event(GdkEventConfigure* event) {
@@ -219,7 +226,9 @@ bool mmWindow::on_window_state_event(GdkEventWindowState* event) {
 	return Gtk::Window::on_window_state_event(event);
 }
 
-void mmWindow::loadServices(Services &services) {
+void mmWindow::loadServices() {
+
+	treeModel->clear();
 
 // Add data into the model
 	for (std::vector<Job>::iterator it = services.upstartJobs.begin(); it != services.upstartJobs.end(); it++) {
@@ -230,11 +239,10 @@ void mmWindow::loadServices(Services &services) {
 		row[modelColumns.completeDescription] = it->toString();
 	}
 
-// Show columns in the vew
-	treeView.append_column("Name", modelColumns.jobName);
-	treeView.get_column(0)->set_expand(true);
-	treeView.append_column("Description", modelColumns.description);
-	treeView.get_column(1)->set_expand(true);
-	treeView.append_column("Running", modelColumns.someInstanceRunning);
+}
 
+void mmWindow::on_refresh_clicked() {
+	//g_message("refresh clicked!");
+	services.loadUpstartJobs();
+	loadServices();
 }

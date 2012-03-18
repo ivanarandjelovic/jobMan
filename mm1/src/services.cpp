@@ -39,11 +39,11 @@ Glib::ustring Job::toString() {
 }
 
 Services::~Services() {
-	g_message("at end, upstart jobs listed START:");
-	for (std::vector<Job>::iterator it = upstartJobs.begin(); it != upstartJobs.end(); it++) {
-		cout << it->toString() << endl;
-	}
-	g_message("at end, upstart jobs listed END.");
+	//g_message("at end, upstart jobs listed START:");
+	//for (std::vector<Job>::iterator it = upstartJobs.begin(); it != upstartJobs.end(); it++) {
+	//	cout << it->toString() << endl;
+	//}
+	//g_message("at end, upstart jobs listed END.");
 }
 
 Glib::ustring Services::getStringProperty(RefPtr<DBus::Proxy> &jobProxy, const ustring &propertyName) {
@@ -132,6 +132,9 @@ void Services::loadInstance(RefPtr<DBus::Proxy> &jobProxy, JobInstance &jobInsta
 }
 
 void Services::loadUpstartJobs() {
+	// Clear previously loaded jobs
+	upstartJobs.clear();
+
 	Glib::RefPtr<Gio::DBus::Connection> busConnection;
 
 	Glib::init();
@@ -152,7 +155,7 @@ void Services::loadUpstartJobs() {
 	while (iterator.next_value(var)) {
 		ustring jobObjectPath = var.get();
 
-		g_message("job: '%s", jobObjectPath.c_str());
+		//g_message("job: '%s", jobObjectPath.c_str());
 
 		Job service;
 		service.dbusObjectPath = jobObjectPath;
