@@ -39,7 +39,6 @@ mmWindow::mmWindow() {
 
 	scrolledWindowLabel.add(detailsLabel);
 
-
 	hBoxRightButtons.pack_start(buttonStart, true, true, 2);
 	hBoxRightButtons.pack_start(buttonRestart, true, true, 2);
 	hBoxRightButtons.pack_start(buttonStop, true, true, 2);
@@ -49,7 +48,6 @@ mmWindow::mmWindow() {
 	vBoxRightOuter.pack_start(scrolledWindowLabel, true, true, 2); // add(detailsLabel);
 	vBoxRightOuter.pack_start(hBoxRightButtons, false, true, 2);
 	vBoxRightOuter.pack_start(hBoxRightLower, false, true, 2);
-
 
 	buttonStart.set_label("Start");
 	buttonRestart.set_label("Restart");
@@ -62,6 +60,9 @@ mmWindow::mmWindow() {
 	buttonStop.set_sensitive(false);
 
 	buttonReefresh.signal_clicked().connect(sigc::mem_fun(*this, &mmWindow::on_refresh_clicked));
+	buttonStart.signal_clicked().connect(sigc::mem_fun(*this, &mmWindow::on_start_clicked));
+	buttonRestart.signal_clicked().connect(sigc::mem_fun(*this, &mmWindow::on_restart_clicked));
+	buttonStop.signal_clicked().connect(sigc::mem_fun(*this, &mmWindow::on_stop_clicked));
 
 	//detailsLabel.set_markup("&lt;empty&gt;");
 	detailsLabel.set_line_wrap(true);
@@ -85,7 +86,7 @@ void mmWindow::on_job_selected_handler() {
 		//std::cout << iter->get_value(modelColumns.completeDescription) << std::endl;
 		detailsLabel.set_markup(iter->get_value(modelColumns.completeDescription));
 		selectedJob = iter->get_value(modelColumns.job);
-		if(selectedJob.someInstanceRunning) {
+		if (selectedJob.someInstanceRunning) {
 			buttonStop.set_sensitive(true);
 			buttonRestart.set_sensitive(false);
 			buttonStart.set_sensitive(false);
@@ -205,7 +206,7 @@ void mmWindow::setPosition() {
 			unmaximize();
 		}
 	} else {
-		resize(640*1.5, 400*1.5);
+		resize(640 * 1.5, 400 * 1.5);
 		set_position(Gtk::WIN_POS_CENTER);
 	}
 }
@@ -249,6 +250,19 @@ void mmWindow::loadServices() {
 
 void mmWindow::on_refresh_clicked() {
 	//g_message("refresh clicked!");
+	//Glib::RefPtr<Gdk::Cursor> oldCursor = get_window()->get_cursor();
+	//get_window()->set_cursor(Gdk::Cursor::create(Gdk::WATCH));
 	services.loadUpstartJobs();
 	loadServices();
+	//get_window()->set_cursor();
+}
+
+void mmWindow::on_start_clicked() {
+	g_message("on_start_clicked clicked!");
+}
+void mmWindow::on_restart_clicked() {
+	g_message("on_restart_clicked clicked!");
+}
+void mmWindow::on_stop_clicked() {
+	g_message("on_stop_clicked clicked!");
 }

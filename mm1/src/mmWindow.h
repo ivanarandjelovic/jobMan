@@ -81,6 +81,9 @@ protected:
 	// events:
 	void on_job_selected_handler();
 	void on_refresh_clicked();
+	void on_start_clicked();
+	void on_restart_clicked();
+	void on_stop_clicked();
 
 	// Overriden
 	bool on_configure_event(GdkEventConfigure* event);
