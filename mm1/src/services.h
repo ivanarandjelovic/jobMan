@@ -14,41 +14,12 @@
 #include <algorithm>
 #include <functional>
 
+#include "job.h"
+
 using namespace Glib;
 using namespace Gio;
 
-/**
- * Respresents one running instance of the upstart job
- */
-class JobInstance {
-public:
-	Glib::ustring dbusObjectPath;
-	Glib::ustring goal;
-	Glib::ustring name;
-	Glib::ustring state;
-	JobInstance(Glib::ustring dbusObjectPath) {
-		this->dbusObjectPath = dbusObjectPath;
-	}
-};
 
-class Job {
-public:
-	Glib::ustring dbusObjectPath;
-	Glib::ustring startOn;
-	Glib::ustring stopOn;
-	Glib::ustring emits;
-	Glib::ustring author;
-	Glib::ustring description;
-	Glib::ustring version;
-	Glib::ustring name;
-	std::vector<JobInstance> instances;
-	bool someInstanceRunning;
-
-	Glib::ustring toString();
-	Job() :
-			someInstanceRunning(false) {
-	}
-};
 
 class Services {
 
