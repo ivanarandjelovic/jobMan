@@ -9,10 +9,11 @@
 #define JOB_H_
 
 #include <giomm.h>
-//#include <iostream>
-//#include <sstream>
-//#include <algorithm>
-//#include <functional>
+#include <iostream>
+#include <sstream>
+#include <algorithm>
+#include <functional>
+
 
 /**
  * Respresents one running instance of the upstart job

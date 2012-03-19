@@ -259,10 +259,16 @@ void mmWindow::on_refresh_clicked() {
 
 void mmWindow::on_start_clicked() {
 	g_message("on_start_clicked clicked!");
+	selectedJob.start();
+	on_refresh_clicked();
 }
 void mmWindow::on_restart_clicked() {
 	g_message("on_restart_clicked clicked!");
+	selectedJob.restart();
+	on_refresh_clicked();
 }
 void mmWindow::on_stop_clicked() {
 	g_message("on_stop_clicked clicked!");
+	selectedJob.stop();
+	on_refresh_clicked();
 }

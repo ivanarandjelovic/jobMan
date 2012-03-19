@@ -10,6 +10,11 @@
 #define START_BOLD "<span weight=\"bold\">"
 #define END_BOLD "</span>"
 
+// timeout in ms for calling DBUS methods
+#define DBUS_METHOD_TIMEOUT 60000
+
+using namespace std;
+
 Glib::ustring Job::toString() {
 	Glib::ustring result;
 	result.append(START_BOLD"Job:"END_BOLD"\n");
@@ -38,6 +43,29 @@ Glib::ustring Job::toString() {
 
 bool Job::start() {
 	bool result = false;
+
+	Glib::RefPtr<Gio::DBus::Connection> busConnection = Gio::DBus::Connection::get_sync(Gio::DBus::BUS_TYPE_SYSTEM);
+
+	// Dont kill our process when we close this connection
+	busConnection->set_exit_on_close(false);
+
+	// Load properties of this job:
+	Glib::RefPtr<Gio::DBus::Proxy> jobProxy = Gio::DBus::Proxy::create_sync(busConnection, "com.ubuntu.Upstart",
+			dbusObjectPath, "com.ubuntu.Upstart0_6.Job");
+
+	std::vector<Glib::ustring> emptyVector;
+	Glib::Variant<std::vector<Glib::ustring> > arrayOfStrings = Glib::Variant<std::vector<Glib::ustring> >::create(emptyVector);
+	Glib::Variant<bool> boolWait = Glib::Variant<bool>::create(true);
+
+	std::vector<Glib::VariantBase> paramVector;
+	paramVector.push_back(arrayOfStrings);
+	paramVector.push_back(boolWait);
+
+	Glib::VariantContainerBase parameters = Glib::VariantContainerBase::create_tuple(paramVector);
+
+	jobProxy->call_sync("Start",parameters, DBUS_METHOD_TIMEOUT, Gio::DBus::CALL_FLAGS_NONE);
+
+	busConnection->close_sync();
 
 	return result;
 }
