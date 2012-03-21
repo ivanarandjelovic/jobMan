@@ -5,4 +5,4 @@ Terminal=false
 Exec=/home/aivan/git/mm1/mm1/rootJobMan.sh
 Name=Upstart Job Manager
 Comment=Upstart Job Management Tool
-Icon=gnome-panel-launcher
+Icon=preferences-system
