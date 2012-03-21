@@ -65,7 +65,8 @@ bool Job::start() {
 
 	jobProxy->call_sync("Start",parameters, DBUS_METHOD_TIMEOUT, Gio::DBus::CALL_FLAGS_NONE);
 
-	busConnection->close_sync();
+	// Seems that there is no need for this
+	//busConnection->close_sync();
 
 	return result;
 }
