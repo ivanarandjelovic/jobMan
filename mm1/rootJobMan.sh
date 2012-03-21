@@ -1,4 +1,4 @@
 #!/bin/sh
 
-pkexec `pwd`/Release/jobMan
+pkexec /home/aivan/git/mm1/mm1/Release/jobMan
 
