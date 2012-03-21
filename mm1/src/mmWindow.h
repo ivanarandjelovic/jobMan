@@ -55,6 +55,7 @@ private:
 			const Glib::ustring &keyName);
 	bool loadConfBool(Glib::RefPtr<Gnome::Conf::Client> &gConfClient, const Glib::ustring &windowConfPath,
 			const Glib::ustring &keyName);
+	void initRightPanel();
 
 	// Widgets
 	Gtk::Paned paned;

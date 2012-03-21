@@ -14,7 +14,6 @@
 #include <algorithm>
 #include <functional>
 
-
 /**
  * Respresents one running instance of the upstart job
  */
@@ -50,6 +49,8 @@ public:
 	bool start();
 	bool restart();
 	bool stop();
+private:
+	bool startStop(bool start);
 };
 
 #endif /* JOB_H_ */

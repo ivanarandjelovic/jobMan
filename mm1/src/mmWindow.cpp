@@ -54,10 +54,8 @@ mmWindow::mmWindow() {
 	buttonStop.set_label("Stop");
 	buttonReefresh.set_label("Refresh list");
 
-	// Initially buttons are disabled
-	buttonStart.set_sensitive(false);
-	buttonRestart.set_sensitive(false);
-	buttonStop.set_sensitive(false);
+	// Initially buttons are disabled, and label is empty:
+	initRightPanel();
 
 	buttonReefresh.signal_clicked().connect(sigc::mem_fun(*this, &mmWindow::on_refresh_clicked));
 	buttonStart.signal_clicked().connect(sigc::mem_fun(*this, &mmWindow::on_start_clicked));
@@ -77,6 +75,14 @@ mmWindow::mmWindow() {
 
 }
 
+void mmWindow::initRightPanel() {
+	// Initially buttons are disabled, and label is empty:
+	detailsLabel.set_markup("");
+	buttonStart.set_sensitive(false);
+	buttonRestart.set_sensitive(false);
+	buttonStop.set_sensitive(false);
+}
+
 void mmWindow::on_job_selected_handler() {
 	//g_message("aha");
 
@@ -88,11 +94,11 @@ void mmWindow::on_job_selected_handler() {
 		selectedJob = iter->get_value(modelColumns.job);
 		if (selectedJob.someInstanceRunning) {
 			buttonStop.set_sensitive(true);
-			buttonRestart.set_sensitive(false);
+			buttonRestart.set_sensitive(true);
 			buttonStart.set_sensitive(false);
 		} else {
 			buttonStop.set_sensitive(false);
-			buttonRestart.set_sensitive(true);
+			buttonRestart.set_sensitive(false);
 			buttonStart.set_sensitive(true);
 		}
 	}
@@ -254,6 +260,7 @@ void mmWindow::on_refresh_clicked() {
 	//get_window()->set_cursor(Gdk::Cursor::create(Gdk::WATCH));
 	services.loadUpstartJobs();
 	loadServices();
+	initRightPanel();
 	//get_window()->set_cursor();
 }
 

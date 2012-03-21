@@ -41,8 +41,7 @@ Glib::ustring Job::toString() {
 	return result;
 }
 
-bool Job::start() {
-	bool result = false;
+bool Job::startStop(bool start) {
 
 	Glib::RefPtr<Gio::DBus::Connection> busConnection = Gio::DBus::Connection::get_sync(Gio::DBus::BUS_TYPE_SYSTEM);
 
@@ -54,7 +53,8 @@ bool Job::start() {
 			dbusObjectPath, "com.ubuntu.Upstart0_6.Job");
 
 	std::vector<Glib::ustring> emptyVector;
-	Glib::Variant<std::vector<Glib::ustring> > arrayOfStrings = Glib::Variant<std::vector<Glib::ustring> >::create(emptyVector);
+	Glib::Variant<std::vector<Glib::ustring> > arrayOfStrings = Glib::Variant<std::vector<Glib::ustring> >::create(
+			emptyVector);
 	Glib::Variant<bool> boolWait = Glib::Variant<bool>::create(true);
 
 	std::vector<Glib::VariantBase> paramVector;
@@ -63,12 +63,25 @@ bool Job::start() {
 
 	Glib::VariantContainerBase parameters = Glib::VariantContainerBase::create_tuple(paramVector);
 
-	jobProxy->call_sync("Start",parameters, DBUS_METHOD_TIMEOUT, Gio::DBus::CALL_FLAGS_NONE);
+	if (start) {
+		Glib::VariantContainerBase objectPathVariant = jobProxy->call_sync("Start", parameters, DBUS_METHOD_TIMEOUT,
+				Gio::DBus::CALL_FLAGS_NONE);
+	} else {
+		jobProxy->call_sync("Stop", parameters, DBUS_METHOD_TIMEOUT, Gio::DBus::CALL_FLAGS_NONE);
 
+	}
 	// Seems that there is no need for this
 	//busConnection->close_sync();
 
-	return result;
+	return true;
+}
+
+bool Job::start() {
+	return startStop(true);
+}
+
+bool Job::stop() {
+	return startStop(false);
 }
 
 bool Job::restart() {
@@ -77,12 +90,5 @@ bool Job::restart() {
 	} else {
 		return false;
 	}
-}
-
-bool Job::stop() {
-	bool result = false;
-
-	return result;
-
 }
 
