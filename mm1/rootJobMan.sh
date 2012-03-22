@@ -1,4 +1,0 @@
-#!/bin/sh
-
-pkexec /home/aivan/git/mm1/mm1/Release/jobMan
-

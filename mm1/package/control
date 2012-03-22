@@ -1,0 +1,14 @@
+Package: jobMan
+Version: 0.1-1
+Architecture: amd64
+Maintainer: Ivan Arandjelovic <ivan.arandjelovic@gmail.com>
+Installed-Size: 170
+Depends: libgconfmm (>= 2.6-1c2), libgtkmm (>= 3.0-1)
+Section: admin
+Priority: optional
+Homepage: https://github.com/ivanarandjelovic/jobMan
+Description: Upstart Job Manager
+ Application for listing, starting and stopping Upstart jobs.
+ .
+ This package contains binaries for installing the application.
+ 
