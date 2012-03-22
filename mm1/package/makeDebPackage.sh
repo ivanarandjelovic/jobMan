@@ -24,4 +24,4 @@ dpkg-deb --build debian
 mv debian.deb jobMan_1.1-1_amd64.deb
 
 #Finally, cleanup
-#rm -rf ./debian
+rm -rf ./debian
