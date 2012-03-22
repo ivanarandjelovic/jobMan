@@ -1,8 +1,8 @@
 [Desktop Entry]
-Version=0.1
+Version=0.1-1
 Type=Application
 Terminal=false
-Exec=/home/aivan/git/mm1/mm1/rootJobMan.sh
+Exec=/usr/bin/jobMan-pkexec
 Name=Upstart Job Manager
 Comment=Upstart Job Management Tool
 Icon=preferences-system
