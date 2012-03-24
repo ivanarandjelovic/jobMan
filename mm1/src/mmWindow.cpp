@@ -118,12 +118,10 @@ mmWindow::mmWindow() {
 }
 
 void mmWindow::on_menu_file_exit() {
-	//g_message("Exit clicked");
 	hide();
 }
 
 void mmWindow::on_menu_help_about() {
-	g_message("About clicked");
 	Gtk::AboutDialog aboutDialog;
 	std::vector<Glib::ustring> authors;
 	authors.push_back("Ivan Arandjelovic <ivan.arandjelovic@gmail.com>");
