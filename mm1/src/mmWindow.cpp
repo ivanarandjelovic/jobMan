@@ -15,9 +15,51 @@ mmWindow::mmWindow() {
 	// We need this to precisely return window to it's previous possition
 	set_gravity(Gdk::GRAVITY_STATIC);
 
+	// Prepare menu etc.
+	//Create actions for menus and toolbars:
+	refActionGroup = Gtk::ActionGroup::create();
+
+	refActionGroup->add(Gtk::Action::create("FileMenu", "_File"));
+	refActionGroup->add(Gtk::Action::create("FileExit", Gtk::Stock::QUIT, "E_xit", "Exit the application"),
+			sigc::mem_fun(*this, &mmWindow::on_menu_file_exit));
+
+	refActionGroup->add(Gtk::Action::create("HelpMenu", "_Help"));
+	refActionGroup->add(Gtk::Action::create("HelpAbout", Gtk::Stock::ABOUT, "_About", "About JobMan"),
+			sigc::mem_fun(*this, &mmWindow::on_menu_help_about));
+
+	refUIManager = Gtk::UIManager::create();
+	refUIManager->insert_action_group(refActionGroup);
+
+	add_accel_group(refUIManager->get_accel_group());
+
+	Glib::ustring ui_info = "<ui>"
+			"  <menubar name='MenuBar'>"
+			"    <menu action='FileMenu'>"
+			"      <separator/>"
+			"      <menuitem action='FileExit'/>"
+			"    </menu>"
+			"    <menu action='HelpMenu'>"
+			"      <menuitem action='HelpAbout'/>"
+			"    </menu>"
+			"  </menubar>"
+			"</ui>";
+
+	try {
+		refUIManager->add_ui_from_string(ui_info);
+	} catch (const Glib::Error& ex) {
+		std::cerr << "building menus failed: " << ex.what();
+	}
+
+	Gtk::Widget* pMenubar = refUIManager->get_widget("/MenuBar");
+	if (pMenubar) {
+		vMainBox.pack_start(*pMenubar, Gtk::PACK_SHRINK);
+	}
+	vMainBox.pack_start(paned, Gtk::PACK_EXPAND_WIDGET);
+
+	add(vMainBox);
+
 	paned.set_hexpand(true);
 	paned.set_vexpand(true);
-	add(paned);
 
 	scrolledWindow.set_policy(Gtk::POLICY_AUTOMATIC, Gtk::POLICY_AUTOMATIC);
 	scrolledWindow.add(treeView);
@@ -73,6 +115,23 @@ mmWindow::mmWindow() {
 
 	show_all_children();
 
+}
+
+void mmWindow::on_menu_file_exit() {
+	//g_message("Exit clicked");
+	hide();
+}
+
+void mmWindow::on_menu_help_about() {
+	g_message("About clicked");
+	Gtk::AboutDialog aboutDialog;
+	std::vector<Glib::ustring> authors;
+	authors.push_back("Ivan Arandjelovic <ivan.arandjelovic@gmail.com>");
+	aboutDialog.set_authors(authors);
+	aboutDialog.set_comments("Upstart Job Manager (wanabee)");
+	aboutDialog.set_version(JOBMAN_VERSION);
+	aboutDialog.run();
+	aboutDialog.hide();
 }
 
 void mmWindow::initRightPanel() {

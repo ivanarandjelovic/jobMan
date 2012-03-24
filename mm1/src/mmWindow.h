@@ -14,6 +14,8 @@
 
 #include "services.h"
 
+#define JOBMAN_VERSION "0.1"
+
 class MyModelColumns: public Gtk::TreeModel::ColumnRecord {
 public:
 	Gtk::TreeModelColumn<Job> job;
@@ -50,6 +52,7 @@ private:
 	int size_width, size_height, pos_x, pos_y;
 	bool positionValid;
 
+
 	void setPosition();
 	int loadConfInt(Glib::RefPtr<Gnome::Conf::Client> &gConfClient, const Glib::ustring &windowConfPath,
 			const Glib::ustring &keyName);
@@ -68,6 +71,7 @@ private:
 	Gtk::TreeView treeView;
 	Glib::RefPtr<Gtk::ListStore> treeModel;
 
+	Gtk::VBox vMainBox;
 	Gtk::VBox vBoxRightOuter;
 	Gtk::HBox hBoxRightButtons;
 	Gtk::HBox hBoxRightLower;
@@ -78,6 +82,9 @@ private:
 	Gtk::Label detailsLabel;
 	//Gtk::Box m_VBox;
 
+	Glib::RefPtr<Gtk::UIManager> refUIManager;
+	Glib::RefPtr<Gtk::ActionGroup> refActionGroup;
+
 protected:
 	// events:
 	void on_job_selected_handler();
@@ -85,6 +92,9 @@ protected:
 	void on_start_clicked();
 	void on_restart_clicked();
 	void on_stop_clicked();
+	void on_menu_file_exit();
+	void on_menu_help_about();
+
 
 	// Overriden
 	bool on_configure_event(GdkEventConfigure* event);
