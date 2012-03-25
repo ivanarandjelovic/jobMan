@@ -80,6 +80,7 @@ private:
 	Gtk::Button buttonStart;
 	Gtk::Button buttonRestart;
 	Gtk::Button buttonStop;
+	Gtk::Button buttonSetManual;
 	Gtk::Button buttonReefresh;
 	Gtk::Label detailsLabel;
 	//Gtk::Box m_VBox;
@@ -96,7 +97,7 @@ protected:
 	void on_stop_clicked();
 	void on_menu_file_exit();
 	void on_menu_help_about();
-
+	void on_set_manual_clicked();
 
 	// Overriden
 	bool on_configure_event(GdkEventConfigure* event);

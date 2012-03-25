@@ -59,6 +59,10 @@ public:
 	bool start();
 	bool restart();
 	bool stop();
+	/**
+	 * Enable or disable job (by forcing manual start, or removing it if set by us)
+	 */
+	bool setManual();
 private:
 	bool startStop(bool start);
 };

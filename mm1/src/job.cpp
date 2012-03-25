@@ -117,3 +117,17 @@ bool Job::restart() {
 	}
 }
 
+bool Job::setManual() {
+	if (manual) {
+		Glib::RefPtr<Gio::File> file = Gio::File::create_for_path("/etc/init/" + name + ".override");
+		file->remove();
+	} else {
+		Glib::RefPtr<Gio::File> file = Gio::File::create_for_path("/etc/init/" + name + ".override");
+		Glib::RefPtr<Gio::FileOutputStream> outStream = file->create_file();
+		outStream->write(GENERATED_BY_JOB_MAN_COMMENT);
+		outStream->write("\n");
+		outStream->write("manual\n");
+		outStream->close();
+	}
+	return true;
+}

@@ -74,7 +74,7 @@ mmWindow::mmWindow() {
 	treeView.append_column("Name", modelColumns.jobName);
 	treeView.get_column(0)->set_expand(true);
 	treeView.append_column("Running", modelColumns.someInstanceRunning);
-	treeView.append_column("Manual", modelColumns.setToManual);
+	treeView.append_column("Manual\n(Disabled)", modelColumns.setToManual);
 	treeView.append_column("Description", modelColumns.description);
 	treeView.get_column(3)->set_expand(true);
 
@@ -86,6 +86,8 @@ mmWindow::mmWindow() {
 	hBoxRightButtons.pack_start(buttonRestart, true, true, 2);
 	hBoxRightButtons.pack_start(buttonStop, true, true, 2);
 
+	hBoxRightLower.pack_start(buttonSetManual, true, true, 2);
+
 	hBoxRightLower.pack_start(buttonReefresh, true, true, 2);
 
 	vBoxRightOuter.pack_start(scrolledWindowLabel, true, true, 2); // add(detailsLabel);
@@ -95,6 +97,7 @@ mmWindow::mmWindow() {
 	buttonStart.set_label("Start");
 	buttonRestart.set_label("Restart");
 	buttonStop.set_label("Stop");
+	buttonSetManual.set_label("Enable (remove manual)");
 	buttonReefresh.set_label("Refresh list");
 
 	// Initially buttons are disabled, and label is empty:
@@ -104,6 +107,7 @@ mmWindow::mmWindow() {
 	buttonStart.signal_clicked().connect(sigc::mem_fun(*this, &mmWindow::on_start_clicked));
 	buttonRestart.signal_clicked().connect(sigc::mem_fun(*this, &mmWindow::on_restart_clicked));
 	buttonStop.signal_clicked().connect(sigc::mem_fun(*this, &mmWindow::on_stop_clicked));
+	buttonSetManual.signal_clicked().connect(sigc::mem_fun(*this, &mmWindow::on_set_manual_clicked));
 
 	//detailsLabel.set_markup("&lt;empty&gt;");
 	detailsLabel.set_line_wrap(true);
@@ -139,6 +143,7 @@ void mmWindow::initRightPanel() {
 	buttonStart.set_sensitive(false);
 	buttonRestart.set_sensitive(false);
 	buttonStop.set_sensitive(false);
+	buttonSetManual.set_sensitive(false);
 }
 
 void mmWindow::on_job_selected_handler() {
@@ -158,6 +163,17 @@ void mmWindow::on_job_selected_handler() {
 			buttonStop.set_sensitive(false);
 			buttonRestart.set_sensitive(false);
 			buttonStart.set_sensitive(true);
+		}
+		if (selectedJob.canBeSetToManual) {
+			if (selectedJob.manual) {
+				buttonSetManual.set_label("Enable (remove manual)");
+			} else {
+				buttonSetManual.set_label("Disable (set manual)");
+			}
+			buttonSetManual.set_sensitive(true);
+		} else {
+			//buttonSetManual.set_label("")
+			buttonSetManual.set_sensitive(false);
 		}
 	}
 }
@@ -336,5 +352,10 @@ void mmWindow::on_restart_clicked() {
 void mmWindow::on_stop_clicked() {
 	//g_message("on_stop_clicked clicked!");
 	selectedJob.stop();
+	on_refresh_clicked();
+}
+void mmWindow::on_set_manual_clicked() {
+	//g_message("on_set_manual_clicked!");
+	selectedJob.setManual();
 	on_refresh_clicked();
 }
