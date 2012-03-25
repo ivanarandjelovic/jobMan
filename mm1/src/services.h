@@ -37,6 +37,7 @@ private:
 	Glib::ustring getArrayOfStringArraysProperty(RefPtr<DBus::Proxy> &jobProxy, const ustring &propertyName);
 	std::vector<JobInstance> readStructureWithArray(Glib::VariantContainerBase variantContainer);
 	void loadInstance(RefPtr<DBus::Proxy> &jobProxy, JobInstance &jobInstance);
+	Glib::ustring formatBinom(std::vector<std::vector<Glib::ustring> > &vectorOfVectors);
 };
 
 #endif /* SERVICES_H_ */

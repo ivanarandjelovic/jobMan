@@ -9,10 +9,6 @@
 
 using namespace std;
 
-
-
-
-
 Services::~Services() {
 	//g_message("at end, upstart jobs listed START:");
 	//for (std::vector<Job>::iterator it = upstartJobs.begin(); it != upstartJobs.end(); it++) {
@@ -54,22 +50,31 @@ Glib::ustring Services::getArrayOfStringArraysProperty(RefPtr<DBus::Proxy> &jobP
 	VariantIter iterator(variantContainer);
 
 	Variant<std::vector<Glib::ustring> > innerVectorContainer;
-	int outerLoop = 0;
+	std::vector<std::vector<Glib::ustring> > vectorOfVectors;
 	while (iterator.next_value(innerVectorContainer)) {
-		if (outerLoop > 0) {
-			propertyValue.append("\n");
-		}
 		std::vector<Glib::ustring> innerVector = innerVectorContainer.get();
-		for (uint j = 0; j < innerVector.size(); j++) {
-			if (j > 0) {
-				propertyValue.append(", ");
-			}
-			propertyValue.append(innerVector.at(j));
-		}
-		outerLoop++;
+		vectorOfVectors.push_back(innerVector);
 	}
 
-	return propertyValue;
+	return formatBinom(vectorOfVectors);
+}
+
+Glib::ustring Services::formatBinom(std::vector<std::vector<Glib::ustring> > &vectorOfVectors) {
+	Glib::ustring result("");
+	if (vectorOfVectors.size() > 0) {
+		std::vector<Glib::ustring> innerVector = vectorOfVectors.back();
+		vectorOfVectors.pop_back();
+		if (innerVector.size() == 1 && innerVector.at(0).size() > 0 && innerVector.at(0)[0] == '/') {
+			Glib::ustring rightSide = formatBinom(vectorOfVectors);
+			Glib::ustring leftSide = formatBinom(vectorOfVectors);
+			result = "( " + leftSide + " ) " + innerVector.at(0).substr(1) + " ( " + rightSide + " )";
+		} else {
+			for (uint j = 0; j < innerVector.size(); j++) {
+				result += (j > 0 ? " " : "") + innerVector.at(j);
+			}
+		}
+	}
+	return result;
 }
 
 std::vector<JobInstance> Services::readStructureWithArray(Glib::VariantContainerBase variantContainer) {
