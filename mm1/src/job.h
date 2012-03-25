@@ -13,6 +13,7 @@
 #include <sstream>
 #include <algorithm>
 #include <functional>
+#include <fstream>
 
 /**
  * Respresents one running instance of the upstart job
@@ -40,11 +41,18 @@ public:
 	Glib::ustring name;
 	std::vector<JobInstance> instances;
 	bool someInstanceRunning;
+	bool manual;
+	bool canBeSetToManual;
 
 	Glib::ustring toString();
 	Job() :
-			someInstanceRunning(false) {
+			someInstanceRunning(false), manual(false), canBeSetToManual(false) {
 	}
+
+	/**
+	 * Check and see if the job can be set to "manual" in override file, or if it is already so.
+	 */
+	void loadManualOverrideSettings();
 
 	bool start();
 	bool restart();

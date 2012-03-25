@@ -132,40 +132,42 @@ void Services::loadUpstartJobs() {
 
 		//g_message("job: '%s", jobObjectPath.c_str());
 
-		Job service;
-		service.dbusObjectPath = jobObjectPath;
+		Job job;
+		job.dbusObjectPath = jobObjectPath;
 
 		// Load properties of this job:
 		RefPtr<DBus::Proxy> jobProxy = DBus::Proxy::create_sync(busConnection, "com.ubuntu.Upstart", jobObjectPath,
 				"com.ubuntu.Upstart0_6.Job");
 
-		service.startOn = getArrayOfStringArraysProperty(jobProxy, ustring("start_on"));
-		service.stopOn = getArrayOfStringArraysProperty(jobProxy, ustring("stop_on"));
-		service.emits = getStringArrayProperty(jobProxy, ustring("emits"));
-		service.author = getStringProperty(jobProxy, ustring("author"));
-		service.description = getStringProperty(jobProxy, ustring("description"));
-		service.version = getStringProperty(jobProxy, ustring("version"));
-		service.name = getStringProperty(jobProxy, ustring("name"));
+		job.startOn = getArrayOfStringArraysProperty(jobProxy, ustring("start_on"));
+		job.stopOn = getArrayOfStringArraysProperty(jobProxy, ustring("stop_on"));
+		job.emits = getStringArrayProperty(jobProxy, ustring("emits"));
+		job.author = getStringProperty(jobProxy, ustring("author"));
+		job.description = getStringProperty(jobProxy, ustring("description"));
+		job.version = getStringProperty(jobProxy, ustring("version"));
+		job.name = getStringProperty(jobProxy, ustring("name"));
+
+		job.loadManualOverrideSettings();
 
 		VariantContainerBase variantContainerInstances;
 		Glib::VariantContainerBase parameteres;
 		variantContainerInstances = jobProxy->call_sync("GetAllInstances", parameteres);
-		service.instances = readStructureWithArray(variantContainerInstances);
+		job.instances = readStructureWithArray(variantContainerInstances);
 
-		for (std::vector<JobInstance>::iterator instanceIterator = service.instances.begin();
-				instanceIterator != service.instances.end(); instanceIterator++) {
+		for (std::vector<JobInstance>::iterator instanceIterator = job.instances.begin();
+				instanceIterator != job.instances.end(); instanceIterator++) {
 			RefPtr<DBus::Proxy> jobProxy = DBus::Proxy::create_sync(busConnection, "com.ubuntu.Upstart",
 					instanceIterator->dbusObjectPath, "com.ubuntu.Upstart0_6.Instance");
 
 			loadInstance(jobProxy, *instanceIterator);
 			if (instanceIterator->state == "running") {
-				service.someInstanceRunning = true;
+				job.someInstanceRunning = true;
 			}
 		}
 
 //		cout << "whatIsThis : " << whatIsThis << endl;
 
-		upstartJobs.push_back(service);
+		upstartJobs.push_back(job);
 	}
 
 	busConnection->close_sync();

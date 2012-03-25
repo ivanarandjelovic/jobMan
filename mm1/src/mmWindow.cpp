@@ -74,8 +74,9 @@ mmWindow::mmWindow() {
 	treeView.append_column("Name", modelColumns.jobName);
 	treeView.get_column(0)->set_expand(true);
 	treeView.append_column("Running", modelColumns.someInstanceRunning);
+	treeView.append_column("Manual", modelColumns.setToManual);
 	treeView.append_column("Description", modelColumns.description);
-	treeView.get_column(2)->set_expand(true);
+	treeView.get_column(3)->set_expand(true);
 
 	paned.pack1(scrolledWindow, Gtk::FILL);
 
@@ -306,6 +307,7 @@ void mmWindow::loadServices() {
 		row[modelColumns.jobName] = it->name;
 		row[modelColumns.description] = it->description;
 		row[modelColumns.someInstanceRunning] = it->someInstanceRunning;
+		row[modelColumns.setToManual] = it->manual;
 		row[modelColumns.completeDescription] = it->toString();
 	}
 

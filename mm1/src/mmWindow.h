@@ -22,6 +22,7 @@ public:
 	Gtk::TreeModelColumn<Glib::ustring> jobName;
 	Gtk::TreeModelColumn<Glib::ustring> description;
 	Gtk::TreeModelColumn<bool> someInstanceRunning;
+	Gtk::TreeModelColumn<bool> setToManual;
 	Gtk::TreeModelColumn<Glib::ustring> completeDescription;
 	//Gtk::TreeModelColumn< Glib::RefPtr<Gdk::Pixbuf> > thumbnail;
 
@@ -30,6 +31,7 @@ public:
 		add(jobName);
 		add(description);
 		add(someInstanceRunning);
+		add(setToManual);
 		add(completeDescription);
 		//add (thumbnail);
 	}
