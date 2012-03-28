@@ -1,0 +1,55 @@
+INFO:
+
+JobMan is a simple Upstart job manager.
+
+First of all, it needs to be run with root privileges in order to be able to start or stop jobs, as well as disable/enable them.
+
+However, if you just want to list the jobs and see which ones are running you can run it without root privileges (this is more safe :) ).
+
+BUILD:
+
+Libraries: In order to build it you will need to have installed following "dev" packages:
+glib-2.0 
+glibmm-2.4 
+giomm-2.4
+gtkmm-3.0 
+gconfmm-2.6
+
+
+How to build it:
+
+- Open terminal
+- Enter "package" folder and 
+- run "./makeDebPackage.sh"
+
+If everything goes well you'll end up with "jobMan_1.1-1_amd64.deb" file in the "package" folder. 
+
+or ... send me an email and I can send you .deb package, but only for amd64 (my system is 64bit, it's a bit difficult to
+compile for 32bit on it).
+
+INSTALL:
+
+Double click .deb file or execute in terminal:
+
+$ sudo dpkg -i jobMan_1.1-1_amd64.deb
+
+Then, find it in the Dash home by name "jobMan" or by description "upstart job manager"
+
+REQUIREMENTS:
+
+jobMan works on Ubuntu 11.10, have no idea if it works on other systems that use Upstart.
+
+DISCLAIMER:
+
+I really hope that you know what you are doing if you stop/restart/disable some really important system jobs. 
+I take no responsibility for this piece of software or damage it can do to your system. Simply be carefull.
+
+Code quality: really, really low.
+Error handling: none, what so ever.
+
+Why? Practice in C++, GDK+, gtkmm, etc ...
+
+AUTHOR:
+
+Ivan Arandjelovic
+ivan.arandjelovic@gmail.com

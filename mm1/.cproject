@@ -112,24 +112,24 @@
 									<listOptionValue builtIn="false" value="gthread-2.0"/>
 									<listOptionValue builtIn="false" value="rt"/>
 									<listOptionValue builtIn="false" value="glib-2.0"/>
-									<listOptionValue builtIn="false" value="giomm-2.4"/>
-									<listOptionValue builtIn="false" value="gio-2.0"/>
-									<listOptionValue builtIn="false" value="gmodule-2.0"/>
 									<listOptionValue builtIn="false" value="gtkmm-3.0"/>
 									<listOptionValue builtIn="false" value="atkmm-1.6"/>
 									<listOptionValue builtIn="false" value="gdkmm-3.0"/>
+									<listOptionValue builtIn="false" value="giomm-2.4"/>
 									<listOptionValue builtIn="false" value="pangomm-1.4"/>
 									<listOptionValue builtIn="false" value="gtk-3"/>
 									<listOptionValue builtIn="false" value="cairomm-1.0"/>
 									<listOptionValue builtIn="false" value="gdk-3"/>
 									<listOptionValue builtIn="false" value="atk-1.0"/>
 									<listOptionValue builtIn="false" value="cairo-gobject"/>
+									<listOptionValue builtIn="false" value="gio-2.0"/>
 									<listOptionValue builtIn="false" value="pangoft2-1.0"/>
 									<listOptionValue builtIn="false" value="pangocairo-1.0"/>
 									<listOptionValue builtIn="false" value="gdk_pixbuf-2.0"/>
 									<listOptionValue builtIn="false" value="pango-1.0"/>
 									<listOptionValue builtIn="false" value="freetype"/>
 									<listOptionValue builtIn="false" value="fontconfig"/>
+									<listOptionValue builtIn="false" value="gmodule-2.0"/>
 									<listOptionValue builtIn="false" value="cairo"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.2063445900" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
@@ -158,24 +158,24 @@
 						<entry flags="" kind="libraryFile" name="gthread-2.0"/>
 						<entry flags="" kind="libraryFile" name="rt"/>
 						<entry flags="" kind="libraryFile" name="glib-2.0"/>
-						<entry flags="" kind="libraryFile" name="giomm-2.4"/>
-						<entry flags="" kind="libraryFile" name="gio-2.0"/>
-						<entry flags="" kind="libraryFile" name="gmodule-2.0"/>
 						<entry flags="" kind="libraryFile" name="gtkmm-3.0"/>
 						<entry flags="" kind="libraryFile" name="atkmm-1.6"/>
 						<entry flags="" kind="libraryFile" name="gdkmm-3.0"/>
+						<entry flags="" kind="libraryFile" name="giomm-2.4"/>
 						<entry flags="" kind="libraryFile" name="pangomm-1.4"/>
 						<entry flags="" kind="libraryFile" name="gtk-3"/>
 						<entry flags="" kind="libraryFile" name="cairomm-1.0"/>
 						<entry flags="" kind="libraryFile" name="gdk-3"/>
 						<entry flags="" kind="libraryFile" name="atk-1.0"/>
 						<entry flags="" kind="libraryFile" name="cairo-gobject"/>
+						<entry flags="" kind="libraryFile" name="gio-2.0"/>
 						<entry flags="" kind="libraryFile" name="pangoft2-1.0"/>
 						<entry flags="" kind="libraryFile" name="pangocairo-1.0"/>
 						<entry flags="" kind="libraryFile" name="gdk_pixbuf-2.0"/>
 						<entry flags="" kind="libraryFile" name="pango-1.0"/>
 						<entry flags="" kind="libraryFile" name="freetype"/>
 						<entry flags="" kind="libraryFile" name="fontconfig"/>
+						<entry flags="" kind="libraryFile" name="gmodule-2.0"/>
 						<entry flags="" kind="libraryFile" name="cairo"/>
 					</externalSetting>
 					<externalSetting contentTypes="org.eclipse.cdt.core.cxxSource">
@@ -190,8 +190,6 @@
 						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gconf/2"/>
 						<entry flags="BUILTIN" kind="includePath" name="/usr/include/sigc++-2.0"/>
 						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/sigc++-2.0/include"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/giomm-2.4"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/giomm-2.4/include"/>
 						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gdk-pixbuf-2.0"/>
 						<entry flags="BUILTIN" kind="includePath" name="/usr/include/atk-1.0"/>
 						<entry flags="BUILTIN" kind="includePath" name="/usr/include/pango-1.0"/>
@@ -203,6 +201,8 @@
 						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gtkmm-3.0"/>
 						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/gtkmm-3.0/include"/>
 						<entry flags="BUILTIN" kind="includePath" name="/usr/include/atkmm-1.6"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/giomm-2.4"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/giomm-2.4/include"/>
 						<entry flags="BUILTIN" kind="includePath" name="/usr/include/pangomm-1.4"/>
 						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/pangomm-1.4/include"/>
 						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gtk-3.0"/>
@@ -224,8 +224,6 @@
 						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gconf/2"/>
 						<entry flags="BUILTIN" kind="includePath" name="/usr/include/sigc++-2.0"/>
 						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/sigc++-2.0/include"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/giomm-2.4"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/giomm-2.4/include"/>
 						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gdk-pixbuf-2.0"/>
 						<entry flags="BUILTIN" kind="includePath" name="/usr/include/atk-1.0"/>
 						<entry flags="BUILTIN" kind="includePath" name="/usr/include/pango-1.0"/>
@@ -237,6 +235,8 @@
 						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gtkmm-3.0"/>
 						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/gtkmm-3.0/include"/>
 						<entry flags="BUILTIN" kind="includePath" name="/usr/include/atkmm-1.6"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/giomm-2.4"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/giomm-2.4/include"/>
 						<entry flags="BUILTIN" kind="includePath" name="/usr/include/pangomm-1.4"/>
 						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/pangomm-1.4/include"/>
 						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gtk-3.0"/>
@@ -359,24 +359,24 @@
 									<listOptionValue builtIn="false" value="gthread-2.0"/>
 									<listOptionValue builtIn="false" value="rt"/>
 									<listOptionValue builtIn="false" value="glib-2.0"/>
-									<listOptionValue builtIn="false" value="giomm-2.4"/>
-									<listOptionValue builtIn="false" value="gio-2.0"/>
-									<listOptionValue builtIn="false" value="gmodule-2.0"/>
 									<listOptionValue builtIn="false" value="gtkmm-3.0"/>
 									<listOptionValue builtIn="false" value="atkmm-1.6"/>
 									<listOptionValue builtIn="false" value="gdkmm-3.0"/>
+									<listOptionValue builtIn="false" value="giomm-2.4"/>
 									<listOptionValue builtIn="false" value="pangomm-1.4"/>
 									<listOptionValue builtIn="false" value="gtk-3"/>
 									<listOptionValue builtIn="false" value="cairomm-1.0"/>
 									<listOptionValue builtIn="false" value="gdk-3"/>
 									<listOptionValue builtIn="false" value="atk-1.0"/>
 									<listOptionValue builtIn="false" value="cairo-gobject"/>
+									<listOptionValue builtIn="false" value="gio-2.0"/>
 									<listOptionValue builtIn="false" value="pangoft2-1.0"/>
 									<listOptionValue builtIn="false" value="pangocairo-1.0"/>
 									<listOptionValue builtIn="false" value="gdk_pixbuf-2.0"/>
 									<listOptionValue builtIn="false" value="pango-1.0"/>
 									<listOptionValue builtIn="false" value="freetype"/>
 									<listOptionValue builtIn="false" value="fontconfig"/>
+									<listOptionValue builtIn="false" value="gmodule-2.0"/>
 									<listOptionValue builtIn="false" value="cairo"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1692970012" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
@@ -405,24 +405,24 @@
 						<entry flags="" kind="libraryFile" name="gthread-2.0"/>
 						<entry flags="" kind="libraryFile" name="rt"/>
 						<entry flags="" kind="libraryFile" name="glib-2.0"/>
-						<entry flags="" kind="libraryFile" name="giomm-2.4"/>
-						<entry flags="" kind="libraryFile" name="gio-2.0"/>
-						<entry flags="" kind="libraryFile" name="gmodule-2.0"/>
 						<entry flags="" kind="libraryFile" name="gtkmm-3.0"/>
 						<entry flags="" kind="libraryFile" name="atkmm-1.6"/>
 						<entry flags="" kind="libraryFile" name="gdkmm-3.0"/>
+						<entry flags="" kind="libraryFile" name="giomm-2.4"/>
 						<entry flags="" kind="libraryFile" name="pangomm-1.4"/>
 						<entry flags="" kind="libraryFile" name="gtk-3"/>
 						<entry flags="" kind="libraryFile" name="cairomm-1.0"/>
 						<entry flags="" kind="libraryFile" name="gdk-3"/>
 						<entry flags="" kind="libraryFile" name="atk-1.0"/>
 						<entry flags="" kind="libraryFile" name="cairo-gobject"/>
+						<entry flags="" kind="libraryFile" name="gio-2.0"/>
 						<entry flags="" kind="libraryFile" name="pangoft2-1.0"/>
 						<entry flags="" kind="libraryFile" name="pangocairo-1.0"/>
 						<entry flags="" kind="libraryFile" name="gdk_pixbuf-2.0"/>
 						<entry flags="" kind="libraryFile" name="pango-1.0"/>
 						<entry flags="" kind="libraryFile" name="freetype"/>
 						<entry flags="" kind="libraryFile" name="fontconfig"/>
+						<entry flags="" kind="libraryFile" name="gmodule-2.0"/>
 						<entry flags="" kind="libraryFile" name="cairo"/>
 					</externalSetting>
 					<externalSetting contentTypes="org.eclipse.cdt.core.cxxSource">
@@ -437,8 +437,6 @@
 						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gconf/2"/>
 						<entry flags="BUILTIN" kind="includePath" name="/usr/include/sigc++-2.0"/>
 						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/sigc++-2.0/include"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/giomm-2.4"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/giomm-2.4/include"/>
 						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gdk-pixbuf-2.0"/>
 						<entry flags="BUILTIN" kind="includePath" name="/usr/include/atk-1.0"/>
 						<entry flags="BUILTIN" kind="includePath" name="/usr/include/pango-1.0"/>
@@ -450,6 +448,8 @@
 						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gtkmm-3.0"/>
 						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/gtkmm-3.0/include"/>
 						<entry flags="BUILTIN" kind="includePath" name="/usr/include/atkmm-1.6"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/giomm-2.4"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/giomm-2.4/include"/>
 						<entry flags="BUILTIN" kind="includePath" name="/usr/include/pangomm-1.4"/>
 						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/pangomm-1.4/include"/>
 						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gtk-3.0"/>
@@ -471,8 +471,6 @@
 						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gconf/2"/>
 						<entry flags="BUILTIN" kind="includePath" name="/usr/include/sigc++-2.0"/>
 						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/sigc++-2.0/include"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/giomm-2.4"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/giomm-2.4/include"/>
 						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gdk-pixbuf-2.0"/>
 						<entry flags="BUILTIN" kind="includePath" name="/usr/include/atk-1.0"/>
 						<entry flags="BUILTIN" kind="includePath" name="/usr/include/pango-1.0"/>
@@ -484,6 +482,8 @@
 						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gtkmm-3.0"/>
 						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/gtkmm-3.0/include"/>
 						<entry flags="BUILTIN" kind="includePath" name="/usr/include/atkmm-1.6"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/giomm-2.4"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/giomm-2.4/include"/>
 						<entry flags="BUILTIN" kind="includePath" name="/usr/include/pangomm-1.4"/>
 						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/pangomm-1.4/include"/>
 						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gtk-3.0"/>

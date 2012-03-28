@@ -1,9 +1,19 @@
 #!/bin/sh
 
+set -x verbose #echo on
+
+
+#Build it first
+
+cd ..
+./buildJobMan.sh
+cd package
+
+
 #Prepare files for installation (data)
 
 mkdir -p ./debian/usr/sbin
-cp ../Release/jobMan ./debian/usr/sbin
+cp ../jobMan ./debian/usr/sbin
 
 mkdir -p ./debian/usr/bin
 cp ../resource/jobMan-pkexec ./debian/usr/bin
