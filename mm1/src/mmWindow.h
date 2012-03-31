@@ -39,25 +39,22 @@ public:
 };
 
 class Worker {
-protected:
-	Glib::Thread * thread;
 public:
 	bool active;
 
 	Worker() :
-			thread(0), active(false) {
+			active(false) {
 	}
 
 	// Called to start the processing on the thread
 	virtual void start() {
 		active = true;
-		thread = Glib::Thread::create(sigc::mem_fun(*this, &Worker::internalStart), true);
+		Glib::Thread::create(sigc::mem_fun(*this, &Worker::internalStart), false);
 	}
 
 	// When shutting down, we need to stop the thread
 	virtual ~Worker() {
-		if (thread)
-			thread->join(); // Here we block to truly wait for the thread to complete
+
 	}
 
 	virtual void run() = 0;
