@@ -112,6 +112,7 @@ void Services::loadInstance(RefPtr<DBus::Proxy> &jobProxy, JobInstance &jobInsta
 }
 
 void Services::loadUpstartJobs() {
+	g_message("starting load upstart jobs");
 	// Clear previously loaded jobs
 	upstartJobs.clear();
 

@@ -7,10 +7,13 @@
 
 #include "mmWindow.h"
 
-mmWindow::mmWindow() {
+mmWindow::mmWindow() :
+		refreshWorker(services) {
 	isMaximized = false;
-
 	positionValid = false;
+	waitCursorCounter = 0;
+
+	refreshWorker.sig_done.connect(sigc::mem_fun(*this, &mmWindow::on_refresh_complete));
 
 	// We need this to precisely return window to it's previous possition
 	set_gravity(Gdk::GRAVITY_STATIC);
@@ -329,33 +332,60 @@ void mmWindow::loadServices() {
 
 }
 
+void mmWindow::setWaitCursor() {
+	if (waitCursorCounter == 0) {
+		Glib::RefPtr<Gdk::Cursor> oldCursor = get_window()->get_cursor();
+		get_window()->set_cursor(Gdk::Cursor::create(Gdk::WATCH));
+	}
+	waitCursorCounter++;
+}
+
+void mmWindow::unsetWaitCursor() {
+	waitCursorCounter--;
+	if (waitCursorCounter <= 0) {
+		get_window()->set_cursor();
+	}
+}
+
 void mmWindow::on_refresh_clicked() {
-	//g_message("refresh clicked!");
-	//Glib::RefPtr<Gdk::Cursor> oldCursor = get_window()->get_cursor();
-	//get_window()->set_cursor(Gdk::Cursor::create(Gdk::WATCH));
-	services.loadUpstartJobs();
+	g_message("on_refresh_clicked");
+	this->set_sensitive(false);
+	refreshMutex.lock();
+	setWaitCursor();
+
+	refreshWorker.start();
+}
+
+void mmWindow::on_refresh_complete() {
+	g_message("on_refresh_complete");
 	loadServices();
 	initRightPanel();
-	//get_window()->set_cursor();
+	unsetWaitCursor();
+	refreshMutex.unlock();
+	this->set_sensitive(true);
 }
 
 void mmWindow::on_start_clicked() {
-	//g_message("on_start_clicked clicked!");
+	setWaitCursor();
 	selectedJob.start();
 	on_refresh_clicked();
+	unsetWaitCursor();
 }
 void mmWindow::on_restart_clicked() {
-	//g_message("on_restart_clicked clicked!");
+	setWaitCursor();
 	selectedJob.restart();
 	on_refresh_clicked();
+	unsetWaitCursor();
 }
 void mmWindow::on_stop_clicked() {
-	//g_message("on_stop_clicked clicked!");
+	setWaitCursor();
 	selectedJob.stop();
 	on_refresh_clicked();
+	unsetWaitCursor();
 }
 void mmWindow::on_set_manual_clicked() {
-	//g_message("on_set_manual_clicked!");
+	setWaitCursor();
 	selectedJob.setManual();
 	on_refresh_clicked();
+	unsetWaitCursor();
 }

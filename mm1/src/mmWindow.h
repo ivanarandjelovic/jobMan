@@ -10,6 +10,7 @@
 
 #include <gtkmm.h>
 #include <gconfmm.h>
+#include <glibmm.h>
 #include <memory>
 
 #include "services.h"
@@ -37,6 +38,54 @@ public:
 	}
 };
 
+class Worker {
+protected:
+	Glib::Thread * thread;
+public:
+	bool active;
+
+	Worker() :
+			thread(0), active(false) {
+	}
+
+	// Called to start the processing on the thread
+	virtual void start() {
+		active = true;
+		thread = Glib::Thread::create(sigc::mem_fun(*this, &Worker::internalStart), true);
+	}
+
+	// When shutting down, we need to stop the thread
+	virtual ~Worker() {
+		if (thread)
+			thread->join(); // Here we block to truly wait for the thread to complete
+	}
+
+	virtual void run() = 0;
+
+	Glib::Dispatcher sig_done;
+
+protected:
+	// This is where the real work happens
+	void internalStart() {
+		run();
+		active = false;
+		sig_done();
+	}
+
+};
+
+class RefreshWorker: public Worker {
+public:
+	RefreshWorker(Services &services) :
+			Worker(), _services(services) {
+	}
+	void run() {
+		_services.loadUpstartJobs();
+	}
+protected:
+	Services &_services;
+};
+
 class mmWindow: public Gtk::Window {
 
 public:
@@ -53,7 +102,9 @@ private:
 	bool isMaximized;
 	int size_width, size_height, pos_x, pos_y;
 	bool positionValid;
-
+	int waitCursorCounter;
+	Glib::Mutex refreshMutex;
+	RefreshWorker refreshWorker;
 
 	void setPosition();
 	int loadConfInt(Glib::RefPtr<Gnome::Conf::Client> &gConfClient, const Glib::ustring &windowConfPath,
@@ -61,6 +112,8 @@ private:
 	bool loadConfBool(Glib::RefPtr<Gnome::Conf::Client> &gConfClient, const Glib::ustring &windowConfPath,
 			const Glib::ustring &keyName);
 	void initRightPanel();
+	void setWaitCursor();
+	void unsetWaitCursor();
 
 	// Widgets
 	Gtk::Paned paned;
@@ -92,6 +145,7 @@ protected:
 	// events:
 	void on_job_selected_handler();
 	void on_refresh_clicked();
+	void on_refresh_complete();
 	void on_start_clicked();
 	void on_restart_clicked();
 	void on_stop_clicked();
