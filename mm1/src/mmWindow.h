@@ -83,6 +83,28 @@ protected:
 	Services &_services;
 };
 
+class StartWorker: public Worker {
+public:
+	StartWorker() :
+			Worker() {
+	}
+	void run() {
+		_selectedJob->start();
+	}
+	Job *_selectedJob;
+};
+
+class StopWorker: public Worker {
+public:
+	StopWorker() :
+			Worker() {
+	}
+	void run() {
+		_selectedJob->stop();
+	}
+	Job *_selectedJob;
+};
+
 class mmWindow: public Gtk::Window {
 
 public:
@@ -102,6 +124,8 @@ private:
 	int waitCursorCounter;
 	Glib::Mutex refreshMutex;
 	RefreshWorker refreshWorker;
+	StartWorker startWorker;
+	StopWorker stopWorker;
 
 	void setPosition();
 	int loadConfInt(Glib::RefPtr<Gnome::Conf::Client> &gConfClient, const Glib::ustring &windowConfPath,
@@ -144,8 +168,10 @@ protected:
 	void on_refresh_clicked();
 	void on_refresh_complete();
 	void on_start_clicked();
+	void on_start_complete();
 	void on_restart_clicked();
 	void on_stop_clicked();
+	void on_stop_complete();
 	void on_menu_file_exit();
 	void on_menu_help_about();
 	void on_set_manual_clicked();

@@ -14,6 +14,8 @@ mmWindow::mmWindow() :
 	waitCursorCounter = 0;
 
 	refreshWorker.sig_done.connect(sigc::mem_fun(*this, &mmWindow::on_refresh_complete));
+	startWorker.sig_done.connect(sigc::mem_fun(*this, &mmWindow::on_start_complete));
+	stopWorker.sig_done.connect(sigc::mem_fun(*this, &mmWindow::on_stop_complete));
 
 	// We need this to precisely return window to it's previous possition
 	set_gravity(Gdk::GRAVITY_STATIC);
@@ -334,6 +336,7 @@ void mmWindow::loadServices() {
 
 void mmWindow::setWaitCursor() {
 	if (waitCursorCounter == 0) {
+		g_debug("Setting wait cursor...");
 		Glib::RefPtr<Gdk::Cursor> oldCursor = get_window()->get_cursor();
 		get_window()->set_cursor(Gdk::Cursor::create(Gdk::WATCH));
 	}
@@ -343,21 +346,19 @@ void mmWindow::setWaitCursor() {
 void mmWindow::unsetWaitCursor() {
 	waitCursorCounter--;
 	if (waitCursorCounter <= 0) {
+		g_debug("Unsetting wait cursor...");
 		get_window()->set_cursor();
 	}
 }
 
 void mmWindow::on_refresh_clicked() {
-	g_message("on_refresh_clicked");
 	this->set_sensitive(false);
 	refreshMutex.lock();
 	setWaitCursor();
-
 	refreshWorker.start();
 }
 
 void mmWindow::on_refresh_complete() {
-	g_message("on_refresh_complete");
 	loadServices();
 	initRightPanel();
 	unsetWaitCursor();
@@ -366,11 +367,18 @@ void mmWindow::on_refresh_complete() {
 }
 
 void mmWindow::on_start_clicked() {
+	this->set_sensitive(false);
 	setWaitCursor();
-	selectedJob.start();
-	on_refresh_clicked();
-	unsetWaitCursor();
+	startWorker._selectedJob = &selectedJob;
+	startWorker.start();
 }
+
+void  mmWindow::on_start_complete() {
+	unsetWaitCursor();
+	this->set_sensitive(true);
+	on_refresh_clicked();
+}
+
 void mmWindow::on_restart_clicked() {
 	setWaitCursor();
 	selectedJob.restart();
@@ -378,11 +386,17 @@ void mmWindow::on_restart_clicked() {
 	unsetWaitCursor();
 }
 void mmWindow::on_stop_clicked() {
+	this->set_sensitive(false);
 	setWaitCursor();
-	selectedJob.stop();
-	on_refresh_clicked();
-	unsetWaitCursor();
+	stopWorker._selectedJob = &selectedJob;
+	stopWorker.start();
 }
+void mmWindow::on_stop_complete() {
+	unsetWaitCursor();
+	this->set_sensitive(true);
+	on_refresh_clicked();
+}
+
 void mmWindow::on_set_manual_clicked() {
 	setWaitCursor();
 	selectedJob.setManual();

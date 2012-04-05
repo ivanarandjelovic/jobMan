@@ -88,12 +88,16 @@ bool Job::startStop(bool start) {
 
 	Glib::VariantContainerBase parameters = Glib::VariantContainerBase::create_tuple(paramVector);
 
+	try {
 	if (start) {
 		Glib::VariantContainerBase objectPathVariant = jobProxy->call_sync("Start", parameters, DBUS_METHOD_TIMEOUT,
 				Gio::DBus::CALL_FLAGS_NONE);
 	} else {
 		jobProxy->call_sync("Stop", parameters, DBUS_METHOD_TIMEOUT, Gio::DBus::CALL_FLAGS_NONE);
 
+	}
+	} catch (...) {
+		g_warning("Service start/stop failed, most likely due to missing root permissions!");
 	}
 	// Seems that there is no need for this
 	//busConnection->close_sync();
