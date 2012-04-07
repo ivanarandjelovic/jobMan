@@ -15,7 +15,7 @@
 
 #include "services.h"
 
-#define JOBMAN_VERSION "0.1"
+#define JOBMAN_VERSION "0.2"
 
 class MyModelColumns: public Gtk::TreeModel::ColumnRecord {
 public:

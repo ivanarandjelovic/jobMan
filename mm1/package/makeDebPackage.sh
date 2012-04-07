@@ -40,7 +40,7 @@ echo "2.0" > ./debian/DEBIAN/debian-binary
 dpkg-deb --build debian
 
 #Rename to propper name
-mv debian.deb jobMan_1.1-1_amd64.deb
+mv debian.deb jobMan_0.2-1_amd64.deb
 
 #Finally, cleanup
 rm -rf ./debian
