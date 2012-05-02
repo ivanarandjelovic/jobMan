@@ -1,12 +1,12 @@
 /*
- * mmWindow.h
+ * jobManWindow.h
  *
  *  Created on: Mar 11, 2012
  *      Author: aivan
  */
 
-#ifndef MMWINDOW_H_
-#define MMWINDOW_H_
+#ifndef JOBMANWINDOW_H_
+#define JOBMANWINDOW_H_
 
 #include <gtkmm.h>
 #include <gconfmm.h>
@@ -15,7 +15,7 @@
 
 #include "services.h"
 
-#define JOBMAN_VERSION "0.2"
+#define JOBMAN_VERSION "0.2.2"
 
 class MyModelColumns: public Gtk::TreeModel::ColumnRecord {
 public:
@@ -105,10 +105,10 @@ public:
 	Job *_selectedJob;
 };
 
-class mmWindow: public Gtk::Window {
+class jobManWindow: public Gtk::Window {
 
 public:
-	mmWindow();
+	jobManWindow();
 
 	void savePosition(const Glib::ustring &windowConfPath);
 	void loadPosition(const Glib::ustring &windowConfPath);
@@ -182,4 +182,4 @@ protected:
 
 };
 
-#endif /* MMWINDOW_H_ */
+#endif /* JOBMANWINDOW_H_ */

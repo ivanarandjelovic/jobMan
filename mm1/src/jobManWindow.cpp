@@ -1,21 +1,21 @@
 /*
- * mmWindow.cpp
+ * jobManWindow.cpp
  *
  *  Created on: Mar 11, 2012
  *      Author: aivan
  */
 
-#include "mmWindow.h"
+#include "jobManWindow.h"
 
-mmWindow::mmWindow() :
+jobManWindow::jobManWindow() :
 		refreshWorker(services) {
 	isMaximized = false;
 	positionValid = false;
 	waitCursorCounter = 0;
 
-	refreshWorker.sig_done.connect(sigc::mem_fun(*this, &mmWindow::on_refresh_complete));
-	startWorker.sig_done.connect(sigc::mem_fun(*this, &mmWindow::on_start_complete));
-	stopWorker.sig_done.connect(sigc::mem_fun(*this, &mmWindow::on_stop_complete));
+	refreshWorker.sig_done.connect(sigc::mem_fun(*this, &jobManWindow::on_refresh_complete));
+	startWorker.sig_done.connect(sigc::mem_fun(*this, &jobManWindow::on_start_complete));
+	stopWorker.sig_done.connect(sigc::mem_fun(*this, &jobManWindow::on_stop_complete));
 
 	// We need this to precisely return window to it's previous possition
 	set_gravity(Gdk::GRAVITY_STATIC);
@@ -26,11 +26,11 @@ mmWindow::mmWindow() :
 
 	refActionGroup->add(Gtk::Action::create("FileMenu", "_File"));
 	refActionGroup->add(Gtk::Action::create("FileExit", Gtk::Stock::QUIT, "E_xit", "Exit the application"),
-			sigc::mem_fun(*this, &mmWindow::on_menu_file_exit));
+			sigc::mem_fun(*this, &jobManWindow::on_menu_file_exit));
 
 	refActionGroup->add(Gtk::Action::create("HelpMenu", "_Help"));
 	refActionGroup->add(Gtk::Action::create("HelpAbout", Gtk::Stock::ABOUT, "_About", "About JobMan"),
-			sigc::mem_fun(*this, &mmWindow::on_menu_help_about));
+			sigc::mem_fun(*this, &jobManWindow::on_menu_help_about));
 
 	refUIManager = Gtk::UIManager::create();
 	refUIManager->insert_action_group(refActionGroup);
@@ -73,7 +73,7 @@ mmWindow::mmWindow() :
 
 	treeView.set_model(treeModel);
 	//treeView.signal_selection_received().connect(sigc::mem_fun(*this, &mmWindow::on_job_selected));
-	treeView.get_selection()->signal_changed().connect(sigc::mem_fun(*this, &mmWindow::on_job_selected_handler));
+	treeView.get_selection()->signal_changed().connect(sigc::mem_fun(*this, &jobManWindow::on_job_selected_handler));
 
 	// Show columns in the vew
 	treeView.append_column("Name", modelColumns.jobName);
@@ -108,11 +108,11 @@ mmWindow::mmWindow() :
 	// Initially buttons are disabled, and label is empty:
 	initRightPanel();
 
-	buttonReefresh.signal_clicked().connect(sigc::mem_fun(*this, &mmWindow::on_refresh_clicked));
-	buttonStart.signal_clicked().connect(sigc::mem_fun(*this, &mmWindow::on_start_clicked));
-	buttonRestart.signal_clicked().connect(sigc::mem_fun(*this, &mmWindow::on_restart_clicked));
-	buttonStop.signal_clicked().connect(sigc::mem_fun(*this, &mmWindow::on_stop_clicked));
-	buttonSetManual.signal_clicked().connect(sigc::mem_fun(*this, &mmWindow::on_set_manual_clicked));
+	buttonReefresh.signal_clicked().connect(sigc::mem_fun(*this, &jobManWindow::on_refresh_clicked));
+	buttonStart.signal_clicked().connect(sigc::mem_fun(*this, &jobManWindow::on_start_clicked));
+	buttonRestart.signal_clicked().connect(sigc::mem_fun(*this, &jobManWindow::on_restart_clicked));
+	buttonStop.signal_clicked().connect(sigc::mem_fun(*this, &jobManWindow::on_stop_clicked));
+	buttonSetManual.signal_clicked().connect(sigc::mem_fun(*this, &jobManWindow::on_set_manual_clicked));
 
 	//detailsLabel.set_markup("&lt;empty&gt;");
 	detailsLabel.set_line_wrap(true);
@@ -127,11 +127,11 @@ mmWindow::mmWindow() :
 
 }
 
-void mmWindow::on_menu_file_exit() {
+void jobManWindow::on_menu_file_exit() {
 	hide();
 }
 
-void mmWindow::on_menu_help_about() {
+void jobManWindow::on_menu_help_about() {
 	Gtk::AboutDialog aboutDialog;
 	std::vector<Glib::ustring> authors;
 	authors.push_back("Ivan Arandjelovic <ivan.arandjelovic@gmail.com>");
@@ -142,7 +142,7 @@ void mmWindow::on_menu_help_about() {
 	aboutDialog.hide();
 }
 
-void mmWindow::initRightPanel() {
+void jobManWindow::initRightPanel() {
 	// Initially buttons are disabled, and label is empty:
 	detailsLabel.set_markup("");
 	buttonStart.set_sensitive(false);
@@ -151,7 +151,7 @@ void mmWindow::initRightPanel() {
 	buttonSetManual.set_sensitive(false);
 }
 
-void mmWindow::on_job_selected_handler() {
+void jobManWindow::on_job_selected_handler() {
 	//g_message("aha");
 
 	Gtk::TreeIter iter = treeView.get_selection()->get_selected();
@@ -186,7 +186,7 @@ void mmWindow::on_job_selected_handler() {
 /**
  * Save window position related details under provided path
  */
-void mmWindow::savePosition(const Glib::ustring &windowConfPath) {
+void jobManWindow::savePosition(const Glib::ustring &windowConfPath) {
 	Gnome::Conf::init();
 
 	Glib::RefPtr<Gnome::Conf::Client> gConfClient(Gnome::Conf::Client::get_default_client());
@@ -215,7 +215,7 @@ void mmWindow::savePosition(const Glib::ustring &windowConfPath) {
 
 }
 
-void mmWindow::loadPosition(const Glib::ustring &windowConfPath) {
+void jobManWindow::loadPosition(const Glib::ustring &windowConfPath) {
 	Gnome::Conf::init();
 
 	Glib::RefPtr<Gnome::Conf::Client> gConfClient(Gnome::Conf::Client::get_default_client());
@@ -244,7 +244,7 @@ void mmWindow::loadPosition(const Glib::ustring &windowConfPath) {
 	}
 }
 
-int mmWindow::loadConfInt(Glib::RefPtr<Gnome::Conf::Client> &gConfClient, const Glib::ustring &windowConfPath,
+int jobManWindow::loadConfInt(Glib::RefPtr<Gnome::Conf::Client> &gConfClient, const Glib::ustring &windowConfPath,
 		const Glib::ustring &keyName) {
 	Glib::ustring key(windowConfPath);
 	Gnome::Conf::Value value;
@@ -260,7 +260,7 @@ int mmWindow::loadConfInt(Glib::RefPtr<Gnome::Conf::Client> &gConfClient, const 
 	return returnValue;
 }
 
-bool mmWindow::loadConfBool(Glib::RefPtr<Gnome::Conf::Client> &gConfClient, const Glib::ustring &windowConfPath,
+bool jobManWindow::loadConfBool(Glib::RefPtr<Gnome::Conf::Client> &gConfClient, const Glib::ustring &windowConfPath,
 		const Glib::ustring &keyName) {
 	Glib::ustring key(windowConfPath);
 	Gnome::Conf::Value value;
@@ -281,7 +281,7 @@ bool mmWindow::loadConfBool(Glib::RefPtr<Gnome::Conf::Client> &gConfClient, cons
  *  to be taking care of this
  */
 
-void mmWindow::setPosition() {
+void jobManWindow::setPosition() {
 	if (positionValid) {
 		resize(size_width, size_height);
 		move(pos_x, pos_y);
@@ -296,7 +296,7 @@ void mmWindow::setPosition() {
 	}
 }
 
-bool mmWindow::on_configure_event(GdkEventConfigure* event) {
+bool jobManWindow::on_configure_event(GdkEventConfigure* event) {
 	if (!isMaximized) {
 		size_width = event->width;
 		size_height = event->height;
@@ -308,7 +308,7 @@ bool mmWindow::on_configure_event(GdkEventConfigure* event) {
 	return Gtk::Window::on_configure_event(event);
 }
 
-bool mmWindow::on_window_state_event(GdkEventWindowState* event) {
+bool jobManWindow::on_window_state_event(GdkEventWindowState* event) {
 
 	if (event->changed_mask & GDK_WINDOW_STATE_MAXIMIZED) {
 		isMaximized = event->new_window_state & GDK_WINDOW_STATE_MAXIMIZED;
@@ -317,7 +317,7 @@ bool mmWindow::on_window_state_event(GdkEventWindowState* event) {
 	return Gtk::Window::on_window_state_event(event);
 }
 
-void mmWindow::loadServices() {
+void jobManWindow::loadServices() {
 
 	treeModel->clear();
 
@@ -334,7 +334,7 @@ void mmWindow::loadServices() {
 
 }
 
-void mmWindow::setWaitCursor() {
+void jobManWindow::setWaitCursor() {
 	if (waitCursorCounter == 0) {
 		g_debug("Setting wait cursor...");
 		Glib::RefPtr<Gdk::Cursor> oldCursor = get_window()->get_cursor();
@@ -343,7 +343,7 @@ void mmWindow::setWaitCursor() {
 	waitCursorCounter++;
 }
 
-void mmWindow::unsetWaitCursor() {
+void jobManWindow::unsetWaitCursor() {
 	waitCursorCounter--;
 	if (waitCursorCounter <= 0) {
 		g_debug("Unsetting wait cursor...");
@@ -351,14 +351,14 @@ void mmWindow::unsetWaitCursor() {
 	}
 }
 
-void mmWindow::on_refresh_clicked() {
+void jobManWindow::on_refresh_clicked() {
 	this->set_sensitive(false);
 	refreshMutex.lock();
 	setWaitCursor();
 	refreshWorker.start();
 }
 
-void mmWindow::on_refresh_complete() {
+void jobManWindow::on_refresh_complete() {
 	loadServices();
 	initRightPanel();
 	unsetWaitCursor();
@@ -366,38 +366,38 @@ void mmWindow::on_refresh_complete() {
 	this->set_sensitive(true);
 }
 
-void mmWindow::on_start_clicked() {
+void jobManWindow::on_start_clicked() {
 	this->set_sensitive(false);
 	setWaitCursor();
 	startWorker._selectedJob = &selectedJob;
 	startWorker.start();
 }
 
-void  mmWindow::on_start_complete() {
+void  jobManWindow::on_start_complete() {
 	unsetWaitCursor();
 	this->set_sensitive(true);
 	on_refresh_clicked();
 }
 
-void mmWindow::on_restart_clicked() {
+void jobManWindow::on_restart_clicked() {
 	setWaitCursor();
 	selectedJob.restart();
 	on_refresh_clicked();
 	unsetWaitCursor();
 }
-void mmWindow::on_stop_clicked() {
+void jobManWindow::on_stop_clicked() {
 	this->set_sensitive(false);
 	setWaitCursor();
 	stopWorker._selectedJob = &selectedJob;
 	stopWorker.start();
 }
-void mmWindow::on_stop_complete() {
+void jobManWindow::on_stop_complete() {
 	unsetWaitCursor();
 	this->set_sensitive(true);
 	on_refresh_clicked();
 }
 
-void mmWindow::on_set_manual_clicked() {
+void jobManWindow::on_set_manual_clicked() {
 	setWaitCursor();
 	selectedJob.setManual();
 	on_refresh_clicked();

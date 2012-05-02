@@ -1,5 +1,5 @@
 //============================================================================
-// Name        : mm1.cpp
+// Name        : main.cpp
 // Author      : 
 // Version     :
 // Copyright   : Your copyright notice
@@ -8,12 +8,12 @@
 
 #include <gtkmm.h>
 #include <string>
-#include "mmWindow.h"
+#include "jobManWindow.h"
 #include "services.h"
 
-#define MM_GCONF_BASE_PATH "/apps/aivan/mm1"
+#define JOBMAN_GCONF_BASE_PATH "/apps/aivan/jobMan"
 
-const Glib::ustring configBasePath(MM_GCONF_BASE_PATH);
+const Glib::ustring configBasePath(JOBMAN_GCONF_BASE_PATH);
 
 int main(int argc, char *argv[]) {
 
@@ -34,7 +34,7 @@ int main(int argc, char *argv[]) {
 
 	Gtk::Main kit(argc, argv);
 
-	mmWindow window;
+	jobManWindow window;
 
 	window.loadServices();
 
