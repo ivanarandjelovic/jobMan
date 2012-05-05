@@ -6,6 +6,8 @@
 // Description : Hello World in gtkmm
 //============================================================================
 
+#include "main.h"
+
 #include <gtkmm.h>
 #include <string>
 #include "jobManWindow.h"

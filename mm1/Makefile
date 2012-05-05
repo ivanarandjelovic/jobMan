@@ -10,19 +10,36 @@ objects = job.o jobManWindow.o main.o services.o
 jobMan : $(objects)
 	g++ -o $@ $(objects) $(LFLAGS)
 		
-#job.o : src/job.cpp src/job.h
- 
-job.o : src/job.cpp src/job.h
-	g++ $(CFLAGS) -c src/job.cpp 
+#job.o : job.cpp job.h
+#	g++ $(CFLAGS) -c $< 
 
-jobManWindow.o : src/jobManWindow.cpp src/jobManWindow.h src/services.h
-	g++ $(CFLAGS) -c src/jobManWindow.cpp
+%.cpp : %.h
 
-services.o : src/services.cpp src/services.h src/job.h
-	g++ $(CFLAGS) -c src/services.cpp
+#jobManWindow.o : jobManWindow.cpp jobManWindow.h services.h
+#	g++ $(CFLAGS) -c $<
 
-main.o : src/main.cpp src/services.h src/jobManWindow.h
-	g++ $(CFLAGS) -c src/main.cpp
+#jobManWindow.cpp : services.h
+
+#services.o : services.cpp services.h job.h
+#	g++ $(CFLAGS) -c $<
+
+#services.cpp : job.h
+
+#main.o : main.cpp services.h jobManWindow.h
+#	g++ $(CFLAGS) -c $<
+
+#.PHONY : main.cpp
+
+#main.cpp : services.h jobManWindow.h
+
+#Non standard prerequisites/inlcudes:
+
+main.o jobManWindow.o : services.h
+main.o : jobManWindow.h
+services.o : job.h
+
+%.o : %.cpp %.h
+	g++ $(CFLAGS) -c $<
 
 .PHONY : clean
 clean : 
