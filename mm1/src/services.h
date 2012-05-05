@@ -11,7 +11,6 @@
 #include <giomm.h>
 #include <iostream>
 #include <sstream>
-
 #include <algorithm>
 #include <functional>
 

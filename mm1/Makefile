@@ -1,36 +1,24 @@
+#Search path for source files
 VPATH = src
 
+#Compiler flags
 CFLAGS = `pkg-config --cflags glib-2.0 glibmm-2.4 giomm-2.4 gtkmm-3.0 gconfmm-2.6`
+#Linker flags
 LFLAGS = `pkg-config --libs glib-2.0 glibmm-2.4 giomm-2.4 gtkmm-3.0 gconfmm-2.6`
 
+#Main target
+.PHONY: all
 all : jobMan
 
+#List all object files here
 objects = job.o jobManWindow.o main.o services.o
 
+#Main target depends on all object files
 jobMan : $(objects)
 	g++ -o $@ $(objects) $(LFLAGS)
 		
-#job.o : job.cpp job.h
-#	g++ $(CFLAGS) -c $< 
-
+#General prerequisites
 %.cpp : %.h
-
-#jobManWindow.o : jobManWindow.cpp jobManWindow.h services.h
-#	g++ $(CFLAGS) -c $<
-
-#jobManWindow.cpp : services.h
-
-#services.o : services.cpp services.h job.h
-#	g++ $(CFLAGS) -c $<
-
-#services.cpp : job.h
-
-#main.o : main.cpp services.h jobManWindow.h
-#	g++ $(CFLAGS) -c $<
-
-#.PHONY : main.cpp
-
-#main.cpp : services.h jobManWindow.h
 
 #Non standard prerequisites/inlcudes:
 
@@ -38,9 +26,11 @@ main.o jobManWindow.o : services.h
 main.o : jobManWindow.h
 services.o : job.h
 
+#General rule to build (compile) object files
 %.o : %.cpp %.h
 	g++ $(CFLAGS) -c $<
 
+#Simple cleanup of object files and executable file
 .PHONY : clean
 clean : 
 	rm -v -f jobMan $(objects)
