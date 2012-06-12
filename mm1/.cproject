@@ -26,22 +26,27 @@
 								<option id="gnu.cpp.compiler.exe.debug.option.optimization.level.1589960954" name="Optimization Level" superClass="gnu.cpp.compiler.exe.debug.option.optimization.level" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.exe.debug.option.debugging.level.1289820054" name="Debug Level" superClass="gnu.cpp.compiler.exe.debug.option.debugging.level" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.include.paths.1552190326" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="/usr/include/glibmm-2.4"/>
 									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/glibmm-2.4/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/gconf/2"/>
+									<listOptionValue builtIn="false" value="/usr/include/sigc++-2.0"/>
 									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/sigc++-2.0/include"/>
-									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/giomm-2.4/include"/>
-									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/pangomm-1.4/include"/>
-									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/cairomm-1.0/include"/>
 									<listOptionValue builtIn="false" value="/usr/include/glib-2.0"/>
 									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/glib-2.0/include"/>
 									<listOptionValue builtIn="false" value="/usr/include/dbus-1.0"/>
 									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/dbus-1.0/include"/>
 									<listOptionValue builtIn="false" value="/usr/include/gconfmm-2.6"/>
 									<listOptionValue builtIn="false" value="/usr/lib/gconfmm-2.6/include"/>
-									<listOptionValue builtIn="false" value="/usr/include/glibmm-2.4"/>
-									<listOptionValue builtIn="false" value="/usr/include/gconf/2"/>
-									<listOptionValue builtIn="false" value="/usr/include/sigc++-2.0"/>
 									<listOptionValue builtIn="false" value="/usr/include/giomm-2.4"/>
+									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/giomm-2.4/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/atkmm-1.6"/>
+									<listOptionValue builtIn="false" value="/usr/include/pangomm-1.4"/>
+									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/pangomm-1.4/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/gtk-3.0"/>
+									<listOptionValue builtIn="false" value="/usr/include/cairomm-1.0"/>
+									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/cairomm-1.0/include"/>
 									<listOptionValue builtIn="false" value="/usr/include/gdk-pixbuf-2.0"/>
+									<listOptionValue builtIn="false" value="/usr/include/gtk-3.0/unix-print"/>
 									<listOptionValue builtIn="false" value="/usr/include/atk-1.0"/>
 									<listOptionValue builtIn="false" value="/usr/include/pango-1.0"/>
 									<listOptionValue builtIn="false" value="/usr/include/cairo"/>
@@ -51,11 +56,6 @@
 									<listOptionValue builtIn="false" value="/usr/include/gio-unix-2.0/"/>
 									<listOptionValue builtIn="false" value="/usr/include/gtkmm-3.0"/>
 									<listOptionValue builtIn="false" value="/usr/lib/gtkmm-3.0/include"/>
-									<listOptionValue builtIn="false" value="/usr/include/atkmm-1.6"/>
-									<listOptionValue builtIn="false" value="/usr/include/pangomm-1.4"/>
-									<listOptionValue builtIn="false" value="/usr/include/gtk-3.0"/>
-									<listOptionValue builtIn="false" value="/usr/include/cairomm-1.0"/>
-									<listOptionValue builtIn="false" value="/usr/include/gtk-3.0/unix-print"/>
 									<listOptionValue builtIn="false" value="/usr/include/gdkmm-3.0"/>
 									<listOptionValue builtIn="false" value="/usr/lib/gdkmm-3.0/include"/>
 								</option>
@@ -66,22 +66,27 @@
 								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.exe.debug.option.optimization.level.152054715" name="Optimization Level" superClass="gnu.c.compiler.exe.debug.option.optimization.level" valueType="enumerated"/>
 								<option id="gnu.c.compiler.exe.debug.option.debugging.level.1360564080" name="Debug Level" superClass="gnu.c.compiler.exe.debug.option.debugging.level" value="gnu.c.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.include.paths.1413605738" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="/usr/include/glibmm-2.4"/>
 									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/glibmm-2.4/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/gconf/2"/>
+									<listOptionValue builtIn="false" value="/usr/include/sigc++-2.0"/>
 									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/sigc++-2.0/include"/>
-									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/giomm-2.4/include"/>
-									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/pangomm-1.4/include"/>
-									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/cairomm-1.0/include"/>
 									<listOptionValue builtIn="false" value="/usr/include/glib-2.0"/>
 									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/glib-2.0/include"/>
 									<listOptionValue builtIn="false" value="/usr/include/dbus-1.0"/>
 									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/dbus-1.0/include"/>
 									<listOptionValue builtIn="false" value="/usr/include/gconfmm-2.6"/>
 									<listOptionValue builtIn="false" value="/usr/lib/gconfmm-2.6/include"/>
-									<listOptionValue builtIn="false" value="/usr/include/glibmm-2.4"/>
-									<listOptionValue builtIn="false" value="/usr/include/gconf/2"/>
-									<listOptionValue builtIn="false" value="/usr/include/sigc++-2.0"/>
 									<listOptionValue builtIn="false" value="/usr/include/giomm-2.4"/>
+									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/giomm-2.4/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/atkmm-1.6"/>
+									<listOptionValue builtIn="false" value="/usr/include/pangomm-1.4"/>
+									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/pangomm-1.4/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/gtk-3.0"/>
+									<listOptionValue builtIn="false" value="/usr/include/cairomm-1.0"/>
+									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/cairomm-1.0/include"/>
 									<listOptionValue builtIn="false" value="/usr/include/gdk-pixbuf-2.0"/>
+									<listOptionValue builtIn="false" value="/usr/include/gtk-3.0/unix-print"/>
 									<listOptionValue builtIn="false" value="/usr/include/atk-1.0"/>
 									<listOptionValue builtIn="false" value="/usr/include/pango-1.0"/>
 									<listOptionValue builtIn="false" value="/usr/include/cairo"/>
@@ -91,11 +96,6 @@
 									<listOptionValue builtIn="false" value="/usr/include/gio-unix-2.0/"/>
 									<listOptionValue builtIn="false" value="/usr/include/gtkmm-3.0"/>
 									<listOptionValue builtIn="false" value="/usr/lib/gtkmm-3.0/include"/>
-									<listOptionValue builtIn="false" value="/usr/include/atkmm-1.6"/>
-									<listOptionValue builtIn="false" value="/usr/include/pangomm-1.4"/>
-									<listOptionValue builtIn="false" value="/usr/include/gtk-3.0"/>
-									<listOptionValue builtIn="false" value="/usr/include/cairomm-1.0"/>
-									<listOptionValue builtIn="false" value="/usr/include/gtk-3.0/unix-print"/>
 									<listOptionValue builtIn="false" value="/usr/include/gdkmm-3.0"/>
 									<listOptionValue builtIn="false" value="/usr/lib/gdkmm-3.0/include"/>
 								</option>
@@ -143,6 +143,40 @@
 			</storageModule>
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings">
 				<externalSettings containerId="org.eclipse.cdt.managedbuilder.pkgconfig.extSettings" factoryId="org.eclipse.cdt.core.extension.container.factory">
+					<externalSetting contentTypes="org.eclipse.cdt.core.cSource:org.eclipse.cdt.core.cxxSource">
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/glibmm-2.4"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/glibmm-2.4/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gconf/2"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/sigc++-2.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/sigc++-2.0/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/glib-2.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/glib-2.0/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/dbus-1.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/dbus-1.0/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gconfmm-2.6"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/gconfmm-2.6/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/giomm-2.4"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/giomm-2.4/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/atkmm-1.6"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/pangomm-1.4"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/pangomm-1.4/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gtk-3.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/cairomm-1.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/cairomm-1.0/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gdk-pixbuf-2.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gtk-3.0/unix-print"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/atk-1.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/pango-1.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/cairo"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/pixman-1"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/freetype2"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/libpng12"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gio-unix-2.0/"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gtkmm-3.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/gtkmm-3.0/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gdkmm-3.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/gdkmm-3.0/include"/>
+					</externalSetting>
 					<externalSetting contentTypes="org.eclipse.cdt.managedbuilder.core.compiledObjectFile">
 						<entry flags="" kind="libraryFile" name="gconfmm-2.6"/>
 						<entry flags="" kind="libraryFile" name="glibmm-2.4"/>
@@ -165,74 +199,6 @@
 						<entry flags="" kind="libraryFile" name="cairo-gobject"/>
 						<entry flags="" kind="libraryFile" name="pango-1.0"/>
 						<entry flags="" kind="libraryFile" name="cairo"/>
-					</externalSetting>
-					<externalSetting contentTypes="org.eclipse.cdt.core.cxxSource">
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/glibmm-2.4"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/glibmm-2.4/include"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gconf/2"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/sigc++-2.0"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/sigc++-2.0/include"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/glib-2.0"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/glib-2.0/include"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/dbus-1.0"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/dbus-1.0/include"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gconfmm-2.6"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/gconfmm-2.6/include"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/giomm-2.4"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/giomm-2.4/include"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/atkmm-1.6"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/pangomm-1.4"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/pangomm-1.4/include"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gtk-3.0"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/cairomm-1.0"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/cairomm-1.0/include"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gdk-pixbuf-2.0"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gtk-3.0/unix-print"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/atk-1.0"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/pango-1.0"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/cairo"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/pixman-1"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/freetype2"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/libpng12"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gio-unix-2.0/"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gtkmm-3.0"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/gtkmm-3.0/include"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gdkmm-3.0"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/gdkmm-3.0/include"/>
-					</externalSetting>
-					<externalSetting contentTypes="org.eclipse.cdt.core.cSource">
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/glibmm-2.4"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/glibmm-2.4/include"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gconf/2"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/sigc++-2.0"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/sigc++-2.0/include"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/glib-2.0"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/glib-2.0/include"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/dbus-1.0"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/dbus-1.0/include"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gconfmm-2.6"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/gconfmm-2.6/include"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/giomm-2.4"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/giomm-2.4/include"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/atkmm-1.6"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/pangomm-1.4"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/pangomm-1.4/include"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gtk-3.0"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/cairomm-1.0"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/cairomm-1.0/include"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gdk-pixbuf-2.0"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gtk-3.0/unix-print"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/atk-1.0"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/pango-1.0"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/cairo"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/pixman-1"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/freetype2"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/libpng12"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gio-unix-2.0/"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gtkmm-3.0"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/gtkmm-3.0/include"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gdkmm-3.0"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/gdkmm-3.0/include"/>
 					</externalSetting>
 				</externalSettings>
 			</storageModule>
@@ -261,22 +227,27 @@
 								<option id="gnu.cpp.compiler.exe.release.option.optimization.level.388484714" name="Optimization Level" superClass="gnu.cpp.compiler.exe.release.option.optimization.level" value="gnu.cpp.compiler.optimization.level.most" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.exe.release.option.debugging.level.851362817" name="Debug Level" superClass="gnu.cpp.compiler.exe.release.option.debugging.level" value="gnu.cpp.compiler.debugging.level.none" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.include.paths.959542012" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="/usr/include/glibmm-2.4"/>
 									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/glibmm-2.4/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/gconf/2"/>
+									<listOptionValue builtIn="false" value="/usr/include/sigc++-2.0"/>
 									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/sigc++-2.0/include"/>
-									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/giomm-2.4/include"/>
-									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/pangomm-1.4/include"/>
-									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/cairomm-1.0/include"/>
 									<listOptionValue builtIn="false" value="/usr/include/glib-2.0"/>
 									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/glib-2.0/include"/>
 									<listOptionValue builtIn="false" value="/usr/include/dbus-1.0"/>
 									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/dbus-1.0/include"/>
 									<listOptionValue builtIn="false" value="/usr/include/gconfmm-2.6"/>
 									<listOptionValue builtIn="false" value="/usr/lib/gconfmm-2.6/include"/>
-									<listOptionValue builtIn="false" value="/usr/include/glibmm-2.4"/>
-									<listOptionValue builtIn="false" value="/usr/include/gconf/2"/>
-									<listOptionValue builtIn="false" value="/usr/include/sigc++-2.0"/>
 									<listOptionValue builtIn="false" value="/usr/include/giomm-2.4"/>
+									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/giomm-2.4/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/atkmm-1.6"/>
+									<listOptionValue builtIn="false" value="/usr/include/pangomm-1.4"/>
+									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/pangomm-1.4/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/gtk-3.0"/>
+									<listOptionValue builtIn="false" value="/usr/include/cairomm-1.0"/>
+									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/cairomm-1.0/include"/>
 									<listOptionValue builtIn="false" value="/usr/include/gdk-pixbuf-2.0"/>
+									<listOptionValue builtIn="false" value="/usr/include/gtk-3.0/unix-print"/>
 									<listOptionValue builtIn="false" value="/usr/include/atk-1.0"/>
 									<listOptionValue builtIn="false" value="/usr/include/pango-1.0"/>
 									<listOptionValue builtIn="false" value="/usr/include/cairo"/>
@@ -286,11 +257,6 @@
 									<listOptionValue builtIn="false" value="/usr/include/gio-unix-2.0/"/>
 									<listOptionValue builtIn="false" value="/usr/include/gtkmm-3.0"/>
 									<listOptionValue builtIn="false" value="/usr/lib/gtkmm-3.0/include"/>
-									<listOptionValue builtIn="false" value="/usr/include/atkmm-1.6"/>
-									<listOptionValue builtIn="false" value="/usr/include/pangomm-1.4"/>
-									<listOptionValue builtIn="false" value="/usr/include/gtk-3.0"/>
-									<listOptionValue builtIn="false" value="/usr/include/cairomm-1.0"/>
-									<listOptionValue builtIn="false" value="/usr/include/gtk-3.0/unix-print"/>
 									<listOptionValue builtIn="false" value="/usr/include/gdkmm-3.0"/>
 									<listOptionValue builtIn="false" value="/usr/lib/gdkmm-3.0/include"/>
 								</option>
@@ -301,22 +267,27 @@
 								<option defaultValue="gnu.c.optimization.level.most" id="gnu.c.compiler.exe.release.option.optimization.level.1454619866" name="Optimization Level" superClass="gnu.c.compiler.exe.release.option.optimization.level" valueType="enumerated"/>
 								<option id="gnu.c.compiler.exe.release.option.debugging.level.2053678541" name="Debug Level" superClass="gnu.c.compiler.exe.release.option.debugging.level" value="gnu.c.debugging.level.none" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.include.paths.1545684163" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="/usr/include/glibmm-2.4"/>
 									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/glibmm-2.4/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/gconf/2"/>
+									<listOptionValue builtIn="false" value="/usr/include/sigc++-2.0"/>
 									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/sigc++-2.0/include"/>
-									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/giomm-2.4/include"/>
-									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/pangomm-1.4/include"/>
-									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/cairomm-1.0/include"/>
 									<listOptionValue builtIn="false" value="/usr/include/glib-2.0"/>
 									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/glib-2.0/include"/>
 									<listOptionValue builtIn="false" value="/usr/include/dbus-1.0"/>
 									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/dbus-1.0/include"/>
 									<listOptionValue builtIn="false" value="/usr/include/gconfmm-2.6"/>
 									<listOptionValue builtIn="false" value="/usr/lib/gconfmm-2.6/include"/>
-									<listOptionValue builtIn="false" value="/usr/include/glibmm-2.4"/>
-									<listOptionValue builtIn="false" value="/usr/include/gconf/2"/>
-									<listOptionValue builtIn="false" value="/usr/include/sigc++-2.0"/>
 									<listOptionValue builtIn="false" value="/usr/include/giomm-2.4"/>
+									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/giomm-2.4/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/atkmm-1.6"/>
+									<listOptionValue builtIn="false" value="/usr/include/pangomm-1.4"/>
+									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/pangomm-1.4/include"/>
+									<listOptionValue builtIn="false" value="/usr/include/gtk-3.0"/>
+									<listOptionValue builtIn="false" value="/usr/include/cairomm-1.0"/>
+									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/cairomm-1.0/include"/>
 									<listOptionValue builtIn="false" value="/usr/include/gdk-pixbuf-2.0"/>
+									<listOptionValue builtIn="false" value="/usr/include/gtk-3.0/unix-print"/>
 									<listOptionValue builtIn="false" value="/usr/include/atk-1.0"/>
 									<listOptionValue builtIn="false" value="/usr/include/pango-1.0"/>
 									<listOptionValue builtIn="false" value="/usr/include/cairo"/>
@@ -326,11 +297,6 @@
 									<listOptionValue builtIn="false" value="/usr/include/gio-unix-2.0/"/>
 									<listOptionValue builtIn="false" value="/usr/include/gtkmm-3.0"/>
 									<listOptionValue builtIn="false" value="/usr/lib/gtkmm-3.0/include"/>
-									<listOptionValue builtIn="false" value="/usr/include/atkmm-1.6"/>
-									<listOptionValue builtIn="false" value="/usr/include/pangomm-1.4"/>
-									<listOptionValue builtIn="false" value="/usr/include/gtk-3.0"/>
-									<listOptionValue builtIn="false" value="/usr/include/cairomm-1.0"/>
-									<listOptionValue builtIn="false" value="/usr/include/gtk-3.0/unix-print"/>
 									<listOptionValue builtIn="false" value="/usr/include/gdkmm-3.0"/>
 									<listOptionValue builtIn="false" value="/usr/lib/gdkmm-3.0/include"/>
 								</option>
@@ -378,6 +344,40 @@
 			</storageModule>
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings">
 				<externalSettings containerId="org.eclipse.cdt.managedbuilder.pkgconfig.extSettings" factoryId="org.eclipse.cdt.core.extension.container.factory">
+					<externalSetting contentTypes="org.eclipse.cdt.core.cSource:org.eclipse.cdt.core.cxxSource">
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/glibmm-2.4"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/glibmm-2.4/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gconf/2"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/sigc++-2.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/sigc++-2.0/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/glib-2.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/glib-2.0/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/dbus-1.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/dbus-1.0/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gconfmm-2.6"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/gconfmm-2.6/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/giomm-2.4"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/giomm-2.4/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/atkmm-1.6"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/pangomm-1.4"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/pangomm-1.4/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gtk-3.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/cairomm-1.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/cairomm-1.0/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gdk-pixbuf-2.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gtk-3.0/unix-print"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/atk-1.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/pango-1.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/cairo"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/pixman-1"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/freetype2"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/libpng12"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gio-unix-2.0/"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gtkmm-3.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/gtkmm-3.0/include"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gdkmm-3.0"/>
+						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/gdkmm-3.0/include"/>
+					</externalSetting>
 					<externalSetting contentTypes="org.eclipse.cdt.managedbuilder.core.compiledObjectFile">
 						<entry flags="" kind="libraryFile" name="gconfmm-2.6"/>
 						<entry flags="" kind="libraryFile" name="glibmm-2.4"/>
@@ -400,74 +400,6 @@
 						<entry flags="" kind="libraryFile" name="cairo-gobject"/>
 						<entry flags="" kind="libraryFile" name="pango-1.0"/>
 						<entry flags="" kind="libraryFile" name="cairo"/>
-					</externalSetting>
-					<externalSetting contentTypes="org.eclipse.cdt.core.cxxSource">
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/glibmm-2.4"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/glibmm-2.4/include"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gconf/2"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/sigc++-2.0"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/sigc++-2.0/include"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/glib-2.0"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/glib-2.0/include"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/dbus-1.0"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/dbus-1.0/include"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gconfmm-2.6"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/gconfmm-2.6/include"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/giomm-2.4"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/giomm-2.4/include"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/atkmm-1.6"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/pangomm-1.4"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/pangomm-1.4/include"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gtk-3.0"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/cairomm-1.0"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/cairomm-1.0/include"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gdk-pixbuf-2.0"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gtk-3.0/unix-print"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/atk-1.0"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/pango-1.0"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/cairo"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/pixman-1"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/freetype2"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/libpng12"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gio-unix-2.0/"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gtkmm-3.0"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/gtkmm-3.0/include"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gdkmm-3.0"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/gdkmm-3.0/include"/>
-					</externalSetting>
-					<externalSetting contentTypes="org.eclipse.cdt.core.cSource">
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/glibmm-2.4"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/glibmm-2.4/include"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gconf/2"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/sigc++-2.0"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/sigc++-2.0/include"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/glib-2.0"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/glib-2.0/include"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/dbus-1.0"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/dbus-1.0/include"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gconfmm-2.6"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/gconfmm-2.6/include"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/giomm-2.4"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/giomm-2.4/include"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/atkmm-1.6"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/pangomm-1.4"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/pangomm-1.4/include"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gtk-3.0"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/cairomm-1.0"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/x86_64-linux-gnu/cairomm-1.0/include"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gdk-pixbuf-2.0"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gtk-3.0/unix-print"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/atk-1.0"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/pango-1.0"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/cairo"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/pixman-1"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/freetype2"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/libpng12"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gio-unix-2.0/"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gtkmm-3.0"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/gtkmm-3.0/include"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/include/gdkmm-3.0"/>
-						<entry flags="BUILTIN" kind="includePath" name="/usr/lib/gdkmm-3.0/include"/>
 					</externalSetting>
 				</externalSettings>
 			</storageModule>

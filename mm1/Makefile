@@ -1,3 +1,5 @@
+#$(warning makefile restart = $(MAKE_RESTARTS))
+
 #Search path for source files
 VPATH = src
 
